@@ -39,8 +39,6 @@ Thumbs.db
 *.db
 
 # Datasets / large artifacts
-dataset/
-outputs/
 artifacts/
 models/
 checkpoints/
