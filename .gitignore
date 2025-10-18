@@ -1,0 +1,72 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.env
+*.conda
+*.ipynb_checkpoints
+
+# IDE / editor configs
+.vscode/
+.idea/
+.vscode-server
+.cursor-server
+.windsurf-server
+.lightning_studio/
+
+# OS / shell files
+.DS_Store
+Thumbs.db
+.bash_history
+.wget-hsts
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.sqlite3
+*.db
+
+# Datasets / large artifacts
+dataset/
+outputs/
+artifacts/
+models/
+checkpoints/
+results/
+*.h5
+*.pt
+*.pth
+*.ckpt
+
+# Config / secrets
+config/*.yaml
+config/*.yml
+config/*.json
+*.env
+secrets.*
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Ignore local install
+*-Admit.egg-info/
+*.egg-info/
+pip-wheel-metadata/
+
+
+# Jupyter / Lightning
+.ipynb_checkpoints/
+.lightning_logs/
