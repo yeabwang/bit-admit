@@ -101,6 +101,10 @@ countries = [
     "Indonesia",
 ]
 
+# Language proficiency
+english_tests = ["IELTS", "TOEFL", "DUOLINGO", "NO_EXAM"]
+chinese_levels = ["NO_EXAM", "HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"]
+
 
 # Helper functions
 def select_program(category):
@@ -132,7 +136,7 @@ def language_logic(cat):
         return "Chinese-taught"
 
 
-# Target assignment logic simplified for demo
+# reject application
 def assign_targets(row):
     # Auto-reject conditions
     if (
@@ -166,73 +170,71 @@ def assign_targets(row):
     return pd.Series(["Admitted", "NO_SCHOLARSHIP", 0])
 
 
-# Initialize dataframe
-df = pd.DataFrame(
-    {
-        "application_id": [f"BIT2025{str(i).zfill(4)}" for i in range(1, n + 1)],
-        "program_category": np.random.choice(
-            program_categories, n, p=[0.4, 0.35, 0.15, 0.1]
-        ),
-    }
-)
+def generate_dataset():
+    # Initialize dataframe
+    df = pd.DataFrame(
+        {
+            "application_id": [f"BIT2025{str(i).zfill(4)}" for i in range(1, n + 1)],
+            "program_category": np.random.choice(
+                program_categories, n, p=[0.4, 0.35, 0.15, 0.1]
+            ),
+        }
+    )
 
-df["bit_program_applied"] = df["program_category"].apply(select_program)
-df["degree_language"] = df["program_category"].apply(language_logic)
+    df["bit_program_applied"] = df["program_category"].apply(select_program)
+    df["degree_language"] = df["program_category"].apply(language_logic)
 
-# Academic / profile numeric features
-df["previous_gpa"] = np.round(np.random.normal(3.3, 0.4, n).clip(0, 4), 2)
-df["academic_ranking_percentile"] = np.random.randint(1, 101, n)
-df["math_physics_background_score"] = np.round(np.random.uniform(4, 10, n), 1)
-df["research_alignment_score"] = np.round(np.random.uniform(0, 10, n), 1)
-df["publication_count"] = np.random.poisson(0.5, n)
-df["technical_competitions"] = np.random.poisson(1.5, n)
+    # Academic / profile numeric features
+    df["previous_gpa"] = np.round(np.random.normal(3.3, 0.4, n).clip(0, 4), 2)
+    df["academic_ranking_percentile"] = np.random.randint(1, 101, n)
+    df["math_physics_background_score"] = np.round(np.random.uniform(4, 10, n), 1)
+    df["research_alignment_score"] = np.round(np.random.uniform(0, 10, n), 1)
+    df["publication_count"] = np.random.poisson(0.5, n)
+    df["technical_competitions"] = np.random.poisson(1.5, n)
 
-# Language proficiency
-english_tests = ["IELTS", "TOEFL", "DUOLINGO", "NO_EXAM"]
-chinese_levels = ["NO_EXAM", "HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"]
+    df["english_test_type"] = np.random.choice(english_tests, n, p=[0.5, 0.3, 0.1, 0.1])
+    df["english_score"] = np.round(np.random.normal(85, 10, n).clip(40, 100), 1)
 
-df["english_test_type"] = np.random.choice(english_tests, n, p=[0.5, 0.3, 0.1, 0.1])
-df["english_score"] = np.round(np.random.normal(85, 10, n).clip(40, 100), 1)
+    df["chinese_proficiency"] = df["degree_language"].apply(assign_chinese_proficiency)
+    df["chinese_study_duration_months"] = np.random.randint(0, 12, n)
+    df["language_certificate_authenticity"] = np.round(np.random.uniform(0.7, 1, n), 2)
 
+    df["home_country"] = np.random.choice(countries, n)
+    df["belt_road_country"] = np.random.choice([0, 1], n, p=[0.3, 0.7])
+    df["developing_country"] = np.random.choice([0, 1], n, p=[0.4, 0.6])
+    df["previous_china_experience"] = np.random.choice([0, 1], n, p=[0.8, 0.2])
+    df["bit_partner_university"] = np.random.choice([0, 1], n, p=[0.7, 0.3])
+    df["age"] = np.random.randint(18, 35, n)
+    df["gender"] = np.random.choice(["Male", "Female"], n, p=[0.55, 0.45])
 
-df["chinese_proficiency"] = df["degree_language"].apply(assign_chinese_proficiency)
-df["chinese_study_duration_months"] = np.random.randint(0, 12, n)
-df["language_certificate_authenticity"] = np.round(np.random.uniform(0.7, 1, n), 2)
+    # Financial
+    df["financial_guarantee_available"] = np.random.choice([0, 1], n, p=[0.2, 0.8])
+    df["family_income_tier"] = np.random.choice(
+        ["Low", "Medium", "High"], n, p=[0.4, 0.45, 0.15]
+    )
+    df["sponsorship_type"] = np.random.choice(
+        ["Government", "Self-funded", "University", "Company"],
+        n,
+        p=[0.3, 0.4, 0.2, 0.1],
+    )
+    df["previous_scholarship"] = np.random.choice([0, 1], n, p=[0.75, 0.25])
+    df["scholarship_essay_score"] = np.round(np.random.uniform(4, 10, n), 1)
+    df["interview_score"] = np.round(np.random.normal(80, 10, n).clip(0, 100), 1)
+    df["sop_score"] = np.round(np.random.uniform(5, 10, n), 1)
+    df["recommendation_strength"] = np.round(np.random.uniform(5, 10, n), 1)
+    df["cultural_adaptability_score"] = np.round(np.random.uniform(5, 10, n), 1)
+    df["document_authenticity_score"] = np.round(np.random.uniform(0.7, 1, n), 2)
+    df["health_certificate_status"] = np.random.choice(
+        ["Valid", "Invalid"], n, p=[0.95, 0.05]
+    )
+    df["previous_visa_refusals"] = np.random.choice([0, 1, 2], n, p=[0.85, 0.1, 0.05])
+    df["application_completeness_score"] = np.round(np.random.uniform(0.8, 1, n), 2)
 
-df["home_country"] = np.random.choice(countries, n)
-df["belt_road_country"] = np.random.choice([0, 1], n, p=[0.3, 0.7])
-df["developing_country"] = np.random.choice([0, 1], n, p=[0.4, 0.6])
-df["previous_china_experience"] = np.random.choice([0, 1], n, p=[0.8, 0.2])
-df["bit_partner_university"] = np.random.choice([0, 1], n, p=[0.7, 0.3])
-df["age"] = np.random.randint(18, 35, n)
-df["gender"] = np.random.choice(["Male", "Female"], n, p=[0.55, 0.45])
+    df[["admission_decision", "scholarship_tier", "scholarship_amount_rmb"]] = df.apply(
+        assign_targets, axis=1
+    )
 
-# Financial
-df["financial_guarantee_available"] = np.random.choice([0, 1], n, p=[0.2, 0.8])
-df["family_income_tier"] = np.random.choice(
-    ["Low", "Medium", "High"], n, p=[0.4, 0.45, 0.15]
-)
-df["sponsorship_type"] = np.random.choice(
-    ["Government", "Self-funded", "University", "Company"], n, p=[0.3, 0.4, 0.2, 0.1]
-)
-df["previous_scholarship"] = np.random.choice([0, 1], n, p=[0.75, 0.25])
-df["scholarship_essay_score"] = np.round(np.random.uniform(4, 10, n), 1)
-df["interview_score"] = np.round(np.random.normal(80, 10, n).clip(0, 100), 1)
-df["sop_score"] = np.round(np.random.uniform(5, 10, n), 1)
-df["recommendation_strength"] = np.round(np.random.uniform(5, 10, n), 1)
-df["cultural_adaptability_score"] = np.round(np.random.uniform(5, 10, n), 1)
-df["document_authenticity_score"] = np.round(np.random.uniform(0.7, 1, n), 2)
-df["health_certificate_status"] = np.random.choice(
-    ["Valid", "Invalid"], n, p=[0.95, 0.05]
-)
-df["previous_visa_refusals"] = np.random.choice([0, 1, 2], n, p=[0.85, 0.1, 0.05])
-df["application_completeness_score"] = np.round(np.random.uniform(0.8, 1, n), 2)
-
-df[["admission_decision", "scholarship_tier", "scholarship_amount_rmb"]] = df.apply(
-    assign_targets, axis=1
-)
-
-# Save CSV
-file_path = f"./dataset/BIT_International_Admissions_Synthetic_{time_string}.csv"
-df.to_csv(file_path, index=False)
-logging.info("data generation completed ---!")
+    # Save CSV
+    file_path = f"./dataset/BIT_International_Admissions_Synthetic_{time_string}.csv"
+    df.to_csv(file_path, index=False)
+    logging.info("data generation completed ---!")
