@@ -1,8 +1,7 @@
 import os
 from pathlib import Path
-import logging
+from BIT_ADMIT_AI.logger import logging
 
-logger = logging.getLogger("__log__")
 project_name = "BIT_ADMIT_AI"
 
 list_of_files = [
@@ -19,6 +18,7 @@ list_of_files = [
     f"{project_name}/entity/__init__.py",
     f"{project_name}/entity/config.py",
     f"{project_name}/entity/artifact.py",
+    f"{project_name}/exceptions/__init__.py",
     f"{project_name}/logger/__init__.py",
     f"{project_name}/pipeline/__init__.py",
     f"{project_name}/pipeline/training.py",
@@ -38,7 +38,7 @@ list_of_files = [
     ".gitignore",
     "LICENCE",
     "README.md",
-    "/dataset"
+    "dataset/",
 ]
 
 for pathfile in list_of_files:
@@ -48,9 +48,9 @@ for pathfile in list_of_files:
 
     if dir_name != "":
         os.makedirs(dir_name, exist_ok=True)
-    if not os.path.exists(path_name) or os.path.getsize(path_name) != 0:
+    if not os.path.exists(path_name) or not os.path.getsize(path_name) != 0:
         with open(path_name, "w") as file:
             pass
     else:
-        logger.warning(f"{path_name}_file alread exists")
+        logging.warning(f"{path_name}_file alread exists")
         continue

@@ -2,13 +2,13 @@ import pandas as pd
 import numpy as np
 import random
 from datetime import datetime
-from time import strftime
+from BIT_ADMIT_AI.logger import logging
 
 np.random.seed(42)
 n = 2000
 
-current_time = datetime.now()
-time_string = current_time.strftime("%Y-%m-%d_%H-%M-%S")
+logging.info("Data generation started.......")
+time_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
 # Application categories and programs
 program_categories = [
@@ -100,6 +100,7 @@ countries = [
     "Malaysia",
     "Indonesia",
 ]
+
 
 # Helper functions
 def select_program(category):
@@ -234,3 +235,4 @@ df[["admission_decision", "scholarship_tier", "scholarship_amount_rmb"]] = df.ap
 # Save CSV
 file_path = f"./dataset/BIT_International_Admissions_Synthetic_{time_string}.csv"
 df.to_csv(file_path, index=False)
+logging.info("data generation completed ---!")
