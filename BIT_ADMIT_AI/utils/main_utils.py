@@ -70,10 +70,11 @@ def save_numpy_array_data(file_path: str, array: np.ndarray):
     array: np.array data to save
     """
     try:
-        dir_path = os.path.dirname(file_path)
-        os.makedirs(dir_path, exist_ok=True)
+        dir_path = os.path.dirname(os.path.abspath(file_path))
+        if dir_path:
+            os.makedirs(dir_path, exist_ok=True)
         with open(file_path, "wb") as file_obj:
-            np.save(file_obj, array)
+            np.save(file_obj, array, allow_pickle=False)
     except Exception as e:
         raise BitAdmitAIException(e)
 
@@ -85,8 +86,10 @@ def load_numpy_array_data(file_path: str) -> np.ndarray:
     return: np.array data loaded
     """
     try:
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
         with open(file_path, "rb") as file_obj:
-            return np.load(file_obj)
+            return np.load(file_obj, allow_pickle=False)
     except Exception as e:
         raise BitAdmitAIException(e)
 
@@ -95,7 +98,9 @@ def save_object(file_path: str, obj: object) -> None:
     logging.info("Entered the save_object method of utils")
 
     try:
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        dir_path = os.path.dirname(os.path.abspath(file_path))
+        if dir_path:
+            os.makedirs(dir_path, exist_ok=True)
         with open(file_path, "wb") as file_obj:
             dill.dump(obj, file_obj)
 
@@ -107,14 +112,14 @@ def save_object(file_path: str, obj: object) -> None:
 
 def drop_columns(df: DataFrame, cols: list) -> DataFrame:
     """
-    drop the columns form a pandas DataFrame
+    Drop the columns from a pandas DataFrame
     df: pandas DataFrame
     cols: list of columns to be dropped
     """
-    logging.info("Entered drop_columns methon of utils")
+    logging.info("Entered drop_columns method of utils")
 
     try:
-        df = df.drop(columns=cols, axis=1)
+        df = df.drop(columns=cols, axis=1, errors="ignore")
 
         logging.info("Exited the drop_columns method of utils")
 
