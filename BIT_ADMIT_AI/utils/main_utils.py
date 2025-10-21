@@ -6,13 +6,13 @@ from pandas import DataFrame
 
 from BIT_ADMIT_AI.logger import logging
 from BIT_ADMIT_AI.exceptions import BitAdmitAIException
-from data_generator import generate_dataset
+from data_generator import generate_dataset as _generate_dataset
 
 
-def generate_dataset() -> None:
+def generate_dataset() -> DataFrame:
     "Generates the syntetic dataset"
     try:
-        generate_dataset()
+        return _generate_dataset()
     except Exception as e:
         logging.error(f"Error occured - {e}")
         raise BitAdmitAIException(e)

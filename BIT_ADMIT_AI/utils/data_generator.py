@@ -5,12 +5,11 @@ from datetime import datetime
 from BIT_ADMIT_AI.logger import logging
 
 np.random.seed(42)
+random.seed(42)
 n = 2000
 
-logging.info("Data generation started.......")
 time_string = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-# Application categories and programs
 program_categories = [
     "Undergraduate",
     "Postgraduate",
@@ -42,13 +41,9 @@ undergraduate_programs = [
 postgraduate_programs = [
     "Aeronautical and Astronautical Science and Technology",
     "Applied Economics",
-    "Armament Science and Technology",
-    "Aviation Digital Economy and Management",
-    "Biology",
     "Biomedical Engineering",
     "Business Administration",
     "Chemical Engineering and Technology",
-    "Chemistry",
     "Computer Science and Technology",
     "Control Science and Engineering",
     "Design",
@@ -60,20 +55,11 @@ postgraduate_programs = [
     "Management Science and Engineering",
     "Materials Science and Technology",
     "Mathematics",
-    "Master of Business Administration (MBA)",
     "Mechanical Engineering",
-    "Mechanics",
     "Optical Engineering",
     "Physics",
-    "Power Engineering and Engineering Thermophysics",
-    "Safety Science and Technology",
     "Statistics",
-    "Teaching Chinese to Speakers of Other Languages",
-    "Theoretical Economics",
     "Cyberspace Science and Technology",
-    "Integrated Circuit Science and Technology",
-    "Master of Engineering Management",
-    "National Economy Mobilization",
 ]
 chinese_language_programs = ["Chinese Language and Culture"]
 dual_degree_programs = [
@@ -81,8 +67,6 @@ dual_degree_programs = [
     "Joint Computer Science Program",
     "Joint Business Administration Program",
 ]
-
-# Demographic
 countries = [
     "Pakistan",
     "India",
@@ -100,141 +84,234 @@ countries = [
     "Malaysia",
     "Indonesia",
 ]
-
-# Language proficiency
-english_tests = ["IELTS", "TOEFL", "DUOLINGO", "NO_EXAM"]
-chinese_levels = ["NO_EXAM", "HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"]
+english_tests = ["IELTS", "TOEFL", "DUOLINGO"]
 
 
-# Helper functions
-def select_program(category):
-    if category == "Undergraduate":
+def select_program(cat):
+    if cat == "Undergraduate":
         return random.choice(undergraduate_programs)
-    elif category == "Postgraduate":
+    if cat == "Postgraduate":
         return random.choice(postgraduate_programs)
-    elif category == "Chinese Language":
+    if cat == "Chinese Language":
         return random.choice(chinese_language_programs)
-    else:
-        return random.choice(dual_degree_programs)
+    return random.choice(dual_degree_programs)
 
 
-# Chinese-taught logic: require HSK5+, else NO_EXAM or low HSK
-def assign_chinese_proficiency(lang):
-    if lang == "Chinese-taught":
-        return np.random.choice(["HSK5", "HSK6"], p=[0.7, 0.3])
-    else:
-        return np.random.choice(
-            ["NO_EXAM", "HSK1", "HSK2", "HSK3"], p=[0.7, 0.1, 0.1, 0.1]
-        )
-
-
-# Degree language logic
 def language_logic(cat):
     if cat in ["Undergraduate", "Postgraduate", "Dual Degree"]:
         return np.random.choice(["English-taught", "Chinese-taught"], p=[0.7, 0.3])
-    else:
-        return "Chinese-taught"
+    return "Chinese-taught"
 
 
-# reject application
+def gen_lang_score(test, quality_class):
+    if test == "TOEFL":
+        mean = {"high": 105, "mid": 92, "low": 75}[quality_class]
+        sd = {"high": 8, "mid": 12, "low": 20}[quality_class]
+        return float(np.clip(np.random.normal(mean, sd), 0, 120))
+    if test == "IELTS":
+        mean = {"high": 7.5, "mid": 6.5, "low": 5.0}[quality_class]
+        sd = {"high": 0.4, "mid": 0.7, "low": 1.0}[quality_class]
+        return float(np.clip(np.random.normal(mean, sd), 0, 9))
+    if test == "DUOLINGO":
+        mean = {"high": 125, "mid": 95, "low": 70}[quality_class]
+        sd = {"high": 10, "mid": 20, "low": 30}[quality_class]
+        return float(np.clip(np.random.normal(mean, sd), 0, 160))
+    return 0.0
+
+
+def assign_chinese_proficiency(lang, quality_class):
+    if lang != "Chinese-taught":
+        return np.random.choice(["HSK1", "HSK2", "HSK3"], p=[0.5, 0.3, 0.2])
+    if quality_class == "high":
+        return np.random.choice(["HSK5", "HSK6"], p=[0.6, 0.4])
+    if quality_class == "mid":
+        return np.random.choice(["HSK4", "HSK5"], p=[0.6, 0.4])
+    return np.random.choice(["HSK3", "HSK4"], p=[0.7, 0.3])
+
+
 def assign_targets(row):
-    # Auto-reject conditions
+    if row.previous_gpa < 2.5:
+        return pd.Series(["Rejected", "No Scholarship"])
+    if row.recommendation_strength < 6 or row.interview_score < 60:
+        return pd.Series(["Rejected", "No Scholarship"])
+    if row.degree_language == "English-taught":
+        if (
+            (row.english_test_type == "TOEFL" and row.english_score < 90)
+            or (row.english_test_type == "IELTS" and row.english_score < 6)
+            or (row.english_test_type == "DUOLINGO" and row.english_score < 90)
+        ):
+            return pd.Series(["Rejected", "No Scholarship"])
+    if row.degree_language == "Chinese-taught" and row.chinese_proficiency not in [
+        "HSK4",
+        "HSK5",
+        "HSK6",
+    ]:
+        return pd.Series(["Rejected", "No Scholarship"])
+    gpa = row.previous_gpa / 4
+    rec = row.recommendation_strength / 10
+    inter = row.interview_score / 100
+    research = row.research_alignment_score / 10
+    math = row.math_physics_background_score / 10
+    pub = min(row.publication_count / 5, 1)
+    if row.program_category == "Postgraduate":
+        score = 10 * (0.4 * gpa + 0.3 * research + 0.1 * pub + 0.1 * rec + 0.1 * inter)
+    elif row.program_category == "Undergraduate":
+        score = 10 * (0.4 * gpa + 0.3 * math + 0.1 * rec + 0.2 * inter)
+    else:
+        score = 10 * (0.5 * gpa + 0.2 * rec + 0.3 * inter)
+    if score < 6.5:
+        return pd.Series(["Rejected", "No Scholarship"])
+    if score < 7.5:
+        return pd.Series(["Admitted", "No Scholarship"])
+    if score < 8.5:
+        if row.previous_gpa >= 3.2 and row.recommendation_strength >= 7:
+            return pd.Series(["Admitted", "Partial Scholarship"])
+        return pd.Series(["Admitted", "No Scholarship"])
     if (
-        row.document_authenticity_score < 0.7
-        or (row.degree_language == "English-taught" and row.english_score < 60)
-        or (
-            row.degree_language == "Chinese-taught"
-            and row.chinese_proficiency not in ["HSK5", "HSK6"]
-        )
-        or row.previous_visa_refusals >= 2
-        or row.application_completeness_score < 0.85
+        row.previous_gpa >= 3.6
+        and row.recommendation_strength >= 8
+        and row.interview_score >= 85
     ):
-        return pd.Series(["Rejected", "None", 0])
-
-    # Scholarship logic
-    if (
-        row.belt_road_country == 1
-        and row.previous_gpa >= 3.5
-        and row.research_alignment_score >= 8
-    ):
-        return pd.Series(["Admitted", "Full", random.randint(45000, 60000)])
-    if (
-        row.technical_competitions >= 2
-        and row.interview_score >= 90
-        and row.family_income_tier == "Low"
-    ):
-        return pd.Series(["Admitted", "Full", random.randint(35000, 50000)])
-    if row.previous_gpa >= 3.2 and row.developing_country == 1 and row.sop_score >= 7:
-        return pd.Series(["Admitted", "Partial", random.randint(15000, 30000)])
-    # Default admit without scholarship
-    return pd.Series(["Admitted", "NO_SCHOLARSHIP", 0])
+        return pd.Series(["Admitted", "Full Scholarship"])
+    return pd.Series(["Admitted", "Partial Scholarship"])
 
 
 def generate_dataset():
-    # Initialize dataframe
     df = pd.DataFrame(
         {
             "application_id": [f"BIT2025{str(i).zfill(4)}" for i in range(1, n + 1)],
             "program_category": np.random.choice(
                 program_categories, n, p=[0.4, 0.35, 0.15, 0.1]
             ),
+            "country": np.random.choice(countries, n),
+            "quality_class": np.random.choice(
+                ["low", "mid", "high"], n, p=[0.5, 0.35, 0.15]
+            ),
         }
     )
-
     df["bit_program_applied"] = df["program_category"].apply(select_program)
     df["degree_language"] = df["program_category"].apply(language_logic)
 
-    # Academic / profile numeric features
-    df["previous_gpa"] = np.round(np.random.normal(3.3, 0.4, n).clip(0, 4), 2)
-    df["academic_ranking_percentile"] = np.random.randint(1, 101, n)
-    df["math_physics_background_score"] = np.round(np.random.uniform(4, 10, n), 1)
-    df["research_alignment_score"] = np.round(np.random.uniform(0, 10, n), 1)
-    df["publication_count"] = np.random.poisson(0.5, n)
-    df["technical_competitions"] = np.random.poisson(1.5, n)
-
-    df["english_test_type"] = np.random.choice(english_tests, n, p=[0.5, 0.3, 0.1, 0.1])
-    df["english_score"] = np.round(np.random.normal(85, 10, n).clip(40, 100), 1)
-
-    df["chinese_proficiency"] = df["degree_language"].apply(assign_chinese_proficiency)
-    df["chinese_study_duration_months"] = np.random.randint(0, 12, n)
-    df["language_certificate_authenticity"] = np.round(np.random.uniform(0.7, 1, n), 2)
-
-    df["home_country"] = np.random.choice(countries, n)
-    df["belt_road_country"] = np.random.choice([0, 1], n, p=[0.3, 0.7])
-    df["developing_country"] = np.random.choice([0, 1], n, p=[0.4, 0.6])
-    df["previous_china_experience"] = np.random.choice([0, 1], n, p=[0.8, 0.2])
-    df["bit_partner_university"] = np.random.choice([0, 1], n, p=[0.7, 0.3])
-    df["age"] = np.random.randint(18, 35, n)
-    df["gender"] = np.random.choice(["Male", "Female"], n, p=[0.55, 0.45])
-
-    # Financial
-    df["financial_guarantee_available"] = np.random.choice([0, 1], n, p=[0.2, 0.8])
-    df["family_income_tier"] = np.random.choice(
-        ["Low", "Medium", "High"], n, p=[0.4, 0.45, 0.15]
-    )
-    df["sponsorship_type"] = np.random.choice(
-        ["Government", "Self-funded", "University", "Company"],
-        n,
-        p=[0.3, 0.4, 0.2, 0.1],
-    )
-    df["previous_scholarship"] = np.random.choice([0, 1], n, p=[0.75, 0.25])
-    df["scholarship_essay_score"] = np.round(np.random.uniform(4, 10, n), 1)
-    df["interview_score"] = np.round(np.random.normal(80, 10, n).clip(0, 100), 1)
-    df["sop_score"] = np.round(np.random.uniform(5, 10, n), 1)
-    df["recommendation_strength"] = np.round(np.random.uniform(5, 10, n), 1)
-    df["cultural_adaptability_score"] = np.round(np.random.uniform(5, 10, n), 1)
-    df["document_authenticity_score"] = np.round(np.random.uniform(0.7, 1, n), 2)
-    df["health_certificate_status"] = np.random.choice(
-        ["Valid", "Invalid"], n, p=[0.95, 0.05]
-    )
-    df["previous_visa_refusals"] = np.random.choice([0, 1, 2], n, p=[0.85, 0.1, 0.05])
-    df["application_completeness_score"] = np.round(np.random.uniform(0.8, 1, n), 2)
-
-    df[["admission_decision", "scholarship_tier", "scholarship_amount_rmb"]] = df.apply(
-        assign_targets, axis=1
+    # GPA - quality correlated
+    df["previous_gpa"] = np.round(
+        np.where(
+            df["quality_class"] == "high",
+            np.random.normal(3.7, 0.15, n),
+            np.where(
+                df["quality_class"] == "mid",
+                np.random.normal(3.2, 0.3, n),
+                np.random.normal(2.6, 0.4, n),
+            ),
+        ),
+        2,
     )
 
-    # Save CSV
-    file_path = f"./dataset/BIT_International_Admissions_Synthetic_{time_string}.csv"
+    # Math/Physics background - quality correlated
+    df["math_physics_background_score"] = np.round(
+        np.clip(
+            np.where(
+                df["quality_class"] == "high",
+                np.random.normal(8.0, 1.0, n),
+                np.where(
+                    df["quality_class"] == "mid",
+                    np.random.normal(6.0, 1.5, n),
+                    np.random.normal(4.5, 1.8, n),
+                ),
+            ),
+            0,
+            10,
+        ),
+        1,
+    )
+
+    # Research alignment - quality correlated
+    df["research_alignment_score"] = np.round(
+        np.clip(
+            np.where(
+                df["quality_class"] == "high",
+                np.random.normal(7.5, 1.2, n),
+                np.where(
+                    df["quality_class"] == "mid",
+                    np.random.normal(5.5, 1.5, n),
+                    np.random.normal(3.8, 1.8, n),
+                ),
+            ),
+            0,
+            10,
+        ),
+        1,
+    )
+
+    # Publication count - quality correlated
+    df["publication_count"] = np.where(
+        df["quality_class"] == "high",
+        np.random.poisson(1.5, n),
+        np.where(
+            df["quality_class"] == "mid",
+            np.random.poisson(0.5, n),
+            np.random.poisson(0.1, n),
+        ),
+    )
+
+    # Recommendation strength - quality correlated
+    df["recommendation_strength"] = np.round(
+        np.clip(
+            np.where(
+                df["quality_class"] == "high",
+                np.random.normal(8.5, 0.8, n),
+                np.where(
+                    df["quality_class"] == "mid",
+                    np.random.normal(7.2, 1.0, n),
+                    np.random.normal(5.8, 1.2, n),
+                ),
+            ),
+            0,
+            10,
+        ),
+        1,
+    )
+
+    # Interview score - quality correlated
+    df["interview_score"] = np.round(
+        np.clip(
+            np.where(
+                df["quality_class"] == "high",
+                np.random.normal(88, 8, n),
+                np.where(
+                    df["quality_class"] == "mid",
+                    np.random.normal(78, 10, n),
+                    np.random.normal(65, 12, n),
+                ),
+            ),
+            0,
+            100,
+        ),
+        1,
+    )
+
+    df["english_test_type"] = np.random.choice(english_tests, n, p=[0.4, 0.4, 0.2])
+    df["english_score"] = [
+        gen_lang_score(t, q)
+        for t, q in zip(df["english_test_type"], df["quality_class"])
+    ]
+    df["chinese_proficiency"] = [
+        assign_chinese_proficiency(l, q)
+        for l, q in zip(df["degree_language"], df["quality_class"])
+    ]
+
+    target = df.apply(assign_targets, axis=1)
+    df["admission_decision"] = target.iloc[:, 0]
+    df["scholarship_tier"] = target.iloc[:, 1]
+
+    # Drop quality_class as it's only a generation helper, not a real feature
+    df = df.drop(columns=["quality_class"])
+
+    file_path = f"./dataset/BIT_Admissions_{time_string}.csv"
     df.to_csv(file_path, index=False)
-    logging.info("data generation completed ---!")
+    return df
+
+
+if __name__ == "__main__":
+    logging.info("Data generation started...")
+    df = generate_dataset()
+    logging.info("Generation complete. No NaN present.")
