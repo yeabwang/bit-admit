@@ -39,7 +39,7 @@ Thumbs.db
 *.db
 
 # Datasets / large artifacts
-artifacts/
+bit_artifact/
 models/
 checkpoints/
 results/
