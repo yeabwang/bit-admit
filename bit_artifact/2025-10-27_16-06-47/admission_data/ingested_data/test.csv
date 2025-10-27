@@ -1,0 +1,401 @@
+application_id,program_category,country,bit_program_applied,degree_language,previous_gpa,math_physics_background_score,research_alignment_score,publication_count,recommendation_strength,interview_score,english_test_type,english_score,chinese_proficiency,admission_decision,scholarship_tier
+BIT20250027,Undergraduate,Russia,Aerospace Engineering,Chinese-taught,3.98,3.4,7.1,1,6.7,69.1,IELTS,6.92411652156742,HSK4,Admitted,No Scholarship
+BIT20251841,Undergraduate,Russia,Life Science,Chinese-taught,3.39,4.0,7.7,3,8.3,78.5,TOEFL,76.79247707839426,HSK4,Admitted,No Scholarship
+BIT20250464,Postgraduate,Russia,Statistics,English-taught,2.58,3.4,4.6,0,3.9,79.6,TOEFL,84.49318512825445,HSK1,Rejected,No Scholarship
+BIT20251801,Dual Degree,Thailand,Joint Business Administration Program,English-taught,3.09,3.9,6.6,1,6.6,76.7,IELTS,5.161294602175303,HSK2,Rejected,No Scholarship
+BIT20250929,Postgraduate,Mongolia,Biomedical Engineering,English-taught,2.46,3.7,3.9,0,3.9,64.5,IELTS,4.882813146756741,HSK3,Rejected,No Scholarship
+BIT20250697,Undergraduate,Malaysia,Mechatronical Engineering,English-taught,2.73,3.2,6.3,0,3.5,78.0,TOEFL,86.21288723465838,HSK1,Rejected,No Scholarship
+BIT20251521,Undergraduate,India,Physics,English-taught,2.6,3.0,1.8,0,9.3,85.9,IELTS,7.227734775947557,HSK1,Rejected,No Scholarship
+BIT20250566,Postgraduate,Brazil,Optical Engineering,Chinese-taught,3.76,4.0,3.3,0,7.3,85.4,IELTS,6.871956770395239,HSK4,Rejected,No Scholarship
+BIT20251338,Postgraduate,Indonesia,Chemical Engineering and Technology,English-taught,3.04,7.4,7.7,2,6.4,90.3,IELTS,7.530940841711622,HSK3,Admitted,No Scholarship
+BIT20250340,Undergraduate,Zimbabwe,Chemistry and Chemical Engineering,Chinese-taught,3.12,3.9,2.9,0,7.2,71.3,TOEFL,63.73407753450493,HSK4,Rejected,No Scholarship
+BIT20251154,Postgraduate,Pakistan,Education,Chinese-taught,3.75,8.5,8.5,0,8.5,100.0,IELTS,8.089859880057741,HSK6,Admitted,Partial Scholarship
+BIT20250657,Undergraduate,Kenya,Physics,English-taught,2.26,6.1,2.0,0,6.3,70.1,TOEFL,85.37252751367006,HSK3,Rejected,No Scholarship
+BIT20250774,Undergraduate,Thailand,Humanities and Social Sciences,English-taught,2.33,2.2,5.1,0,6.2,66.5,IELTS,5.948038939417248,HSK2,Rejected,No Scholarship
+BIT20251949,Undergraduate,Mongolia,Law,English-taught,2.52,3.5,2.9,0,3.5,71.1,DUOLINGO,65.16774916556037,HSK1,Rejected,No Scholarship
+BIT20251862,Postgraduate,Kazakhstan,Biomedical Engineering,English-taught,2.47,3.1,8.3,0,4.8,65.1,IELTS,4.926319053541908,HSK1,Rejected,No Scholarship
+BIT20251871,Chinese Language,Egypt,Chinese Language and Culture,Chinese-taught,3.7,9.1,6.5,3,9.2,90.4,TOEFL,104.6236596598672,HSK5,Admitted,Full Scholarship
+BIT20250907,Chinese Language,Kazakhstan,Chinese Language and Culture,Chinese-taught,3.81,7.7,8.5,1,7.4,88.2,TOEFL,115.6969284731514,HSK6,Admitted,Partial Scholarship
+BIT20250380,Undergraduate,Russia,Life Science,English-taught,3.21,5.1,5.3,0,7.0,62.8,TOEFL,108.97683125371894,HSK2,Admitted,No Scholarship
+BIT20251151,Postgraduate,India,Mechanical Engineering,English-taught,2.6,4.6,6.6,1,6.5,78.7,IELTS,6.713094884982972,HSK3,Rejected,No Scholarship
+BIT20250019,Postgraduate,Thailand,Optical Engineering,English-taught,3.03,6.5,4.2,1,6.5,55.4,IELTS,5.15988937559992,HSK1,Rejected,No Scholarship
+BIT20251664,Postgraduate,India,Statistics,English-taught,2.84,4.1,2.8,0,5.4,80.7,TOEFL,104.88740016371256,HSK2,Rejected,No Scholarship
+BIT20251403,Undergraduate,Pakistan,Optics and Photonics,English-taught,2.83,7.2,4.4,1,5.0,100.0,IELTS,6.127496907991947,HSK1,Rejected,No Scholarship
+BIT20251460,Postgraduate,Malaysia,Materials Science and Technology,Chinese-taught,2.81,3.9,5.6,1,5.8,62.9,IELTS,5.856757440422143,HSK4,Rejected,No Scholarship
+BIT20250848,Dual Degree,Ethiopia,Joint Computer Science Program,Chinese-taught,2.52,3.6,2.1,0,5.2,79.0,IELTS,4.266086625504006,HSK4,Rejected,No Scholarship
+BIT20251624,Dual Degree,Egypt,Joint Mechanical Engineering,Chinese-taught,3.59,4.3,3.6,0,6.8,77.0,DUOLINGO,102.05420422717684,HSK4,Admitted,No Scholarship
+BIT20250330,Undergraduate,Indonesia,Life Science,English-taught,2.85,6.5,5.1,0,7.1,68.0,TOEFL,96.39517322721171,HSK2,Admitted,No Scholarship
+BIT20251325,Dual Degree,Mongolia,Joint Computer Science Program,English-taught,3.14,4.9,4.8,2,6.4,91.3,IELTS,7.396290096685395,HSK2,Admitted,No Scholarship
+BIT20250600,Undergraduate,Pakistan,Mechanical Engineering,English-taught,2.93,6.2,6.7,1,6.8,80.9,TOEFL,86.50775850441815,HSK1,Rejected,No Scholarship
+BIT20250668,Undergraduate,Kenya,Economics,English-taught,2.07,4.2,5.6,0,7.6,83.1,DUOLINGO,56.15394425606699,HSK2,Rejected,No Scholarship
+BIT20250580,Undergraduate,Pakistan,Materials Science and Engineering,English-taught,3.31,9.7,6.8,3,8.8,79.6,DUOLINGO,111.15623537823268,HSK3,Admitted,Partial Scholarship
+BIT20251733,Postgraduate,Russia,Statistics,English-taught,3.56,7.1,3.8,1,6.3,85.9,IELTS,7.281695514498198,HSK1,Rejected,No Scholarship
+BIT20250237,Undergraduate,Morocco,Economics,English-taught,3.02,4.8,6.5,1,6.3,71.1,TOEFL,70.87138711503175,HSK3,Rejected,No Scholarship
+BIT20250349,Undergraduate,Pakistan,Physics,Chinese-taught,3.59,4.6,5.6,1,6.5,73.8,TOEFL,96.8645064711364,HSK5,Admitted,No Scholarship
+BIT20250638,Undergraduate,Russia,Automation,Chinese-taught,2.71,2.7,3.1,0,6.9,66.2,TOEFL,65.9668277217572,HSK3,Rejected,No Scholarship
+BIT20251865,Dual Degree,Pakistan,Joint Business Administration Program,English-taught,3.41,6.2,4.5,1,7.0,85.8,IELTS,6.009385397281359,HSK1,Admitted,Partial Scholarship
+BIT20251028,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,2.05,0.3,2.3,1,4.2,61.0,TOEFL,67.78900396926547,HSK3,Rejected,No Scholarship
+BIT20250448,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,2.98,5.5,3.6,0,5.5,75.3,TOEFL,120.0,HSK5,Rejected,No Scholarship
+BIT20251875,Postgraduate,Malaysia,Mechanical Engineering,English-taught,2.35,3.9,5.1,0,5.6,51.8,DUOLINGO,51.5883504948346,HSK3,Rejected,No Scholarship
+BIT20251159,Chinese Language,Kenya,Chinese Language and Culture,Chinese-taught,3.89,9.8,8.0,3,8.3,70.6,IELTS,8.1154065405591,HSK5,Admitted,Partial Scholarship
+BIT20251179,Chinese Language,Zimbabwe,Chinese Language and Culture,Chinese-taught,3.95,7.0,9.6,2,8.1,76.7,IELTS,7.222166727815576,HSK5,Admitted,Partial Scholarship
+BIT20250891,Postgraduate,Pakistan,Information and Communication Engineering,English-taught,2.66,1.3,6.0,0,6.1,55.0,TOEFL,78.35218433560398,HSK1,Rejected,No Scholarship
+BIT20250123,Undergraduate,Mongolia,Management,English-taught,2.98,2.9,4.2,0,5.8,61.8,IELTS,5.10928404112199,HSK2,Rejected,No Scholarship
+BIT20251573,Postgraduate,Zimbabwe,Computer Science and Technology,English-taught,2.42,3.4,6.8,0,6.1,66.2,IELTS,5.675357139863006,HSK3,Rejected,No Scholarship
+BIT20251886,Postgraduate,Morocco,Control Science and Engineering,English-taught,3.0,5.5,6.5,2,8.3,79.6,IELTS,6.912277441698767,HSK3,Admitted,No Scholarship
+BIT20250666,Undergraduate,Zimbabwe,Management,Chinese-taught,3.78,8.7,6.8,2,8.6,87.1,DUOLINGO,123.81754776401417,HSK6,Admitted,Full Scholarship
+BIT20250130,Postgraduate,Russia,Optical Engineering,English-taught,3.56,5.3,5.8,0,7.1,100.0,IELTS,6.867173106196766,HSK1,Admitted,No Scholarship
+BIT20251693,Undergraduate,Thailand,Automation,English-taught,2.23,7.8,2.9,0,5.1,40.4,IELTS,3.5566016551760717,HSK3,Rejected,No Scholarship
+BIT20251728,Dual Degree,Russia,Joint Computer Science Program,English-taught,2.1,5.3,0.0,0,7.3,71.0,IELTS,4.8698277603938,HSK1,Rejected,No Scholarship
+BIT20250414,Postgraduate,Thailand,Design,English-taught,3.41,6.0,4.1,1,5.3,63.3,TOEFL,120.0,HSK1,Rejected,No Scholarship
+BIT20251750,Undergraduate,Kenya,Management,Chinese-taught,3.25,0.8,5.2,0,5.1,70.6,IELTS,2.964824264973287,HSK3,Rejected,No Scholarship
+BIT20251066,Postgraduate,India,Applied Economics,English-taught,3.78,8.3,7.8,3,8.7,81.7,TOEFL,103.79629827735596,HSK1,Admitted,Partial Scholarship
+BIT20250598,Undergraduate,Malaysia,Humanities and Social Sciences,English-taught,3.03,5.6,6.2,1,6.3,66.0,IELTS,6.1829304229061774,HSK1,Admitted,No Scholarship
+BIT20250564,Undergraduate,Morocco,Law,English-taught,3.45,2.1,4.1,0,5.8,58.9,TOEFL,68.45143108990305,HSK3,Rejected,No Scholarship
+BIT20251798,Undergraduate,Pakistan,Life Science,English-taught,3.06,5.0,7.0,0,7.4,81.3,DUOLINGO,87.94046002605945,HSK1,Rejected,No Scholarship
+BIT20251609,Undergraduate,France,Mechatronical Engineering,Chinese-taught,3.8,8.0,5.7,2,8.1,85.0,IELTS,7.123319372379064,HSK6,Admitted,Full Scholarship
+BIT20250258,Postgraduate,Morocco,Mathematics,English-taught,3.27,5.3,5.1,0,6.6,63.7,TOEFL,109.02710184687731,HSK2,Rejected,No Scholarship
+BIT20250332,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,3.75,7.8,7.9,2,7.5,99.2,IELTS,7.117310025024107,HSK5,Admitted,Partial Scholarship
+BIT20250844,Dual Degree,Zimbabwe,Joint Mechanical Engineering,English-taught,2.83,2.3,7.2,1,5.0,77.5,IELTS,3.2270382069342345,HSK2,Rejected,No Scholarship
+BIT20251751,Postgraduate,Egypt,Mathematics,English-taught,2.21,5.2,2.5,0,6.0,61.0,TOEFL,93.45772237647562,HSK2,Rejected,No Scholarship
+BIT20251359,Undergraduate,Mongolia,Foreign Languages,English-taught,2.27,6.7,2.4,0,7.0,56.3,DUOLINGO,73.75027909723978,HSK1,Rejected,No Scholarship
+BIT20250359,Dual Degree,Kazakhstan,Joint Mechanical Engineering,English-taught,2.46,5.7,5.8,1,5.2,57.6,IELTS,5.005717937700906,HSK1,Rejected,No Scholarship
+BIT20251433,Postgraduate,Kazakhstan,Law,Chinese-taught,3.39,5.8,6.7,0,8.6,74.6,TOEFL,73.31982577299038,HSK5,Admitted,No Scholarship
+BIT20250360,Postgraduate,Egypt,Cyberspace Science and Technology,English-taught,3.17,4.5,3.3,0,6.7,76.5,DUOLINGO,105.5811266840952,HSK2,Rejected,No Scholarship
+BIT20251209,Undergraduate,Morocco,Materials Science and Engineering,English-taught,3.53,5.3,0.8,0,4.9,77.2,DUOLINGO,106.81452652639824,HSK2,Rejected,No Scholarship
+BIT20251373,Chinese Language,Egypt,Chinese Language and Culture,Chinese-taught,2.64,2.4,5.4,0,6.6,65.4,IELTS,3.78533766815294,HSK3,Rejected,No Scholarship
+BIT20251437,Undergraduate,Indonesia,Economics,English-taught,2.18,3.7,7.1,1,5.3,63.3,DUOLINGO,78.47370356215362,HSK2,Rejected,No Scholarship
+BIT20250504,Chinese Language,Zimbabwe,Chinese Language and Culture,Chinese-taught,2.55,4.8,2.9,0,4.4,59.2,IELTS,4.012670779360018,HSK4,Rejected,No Scholarship
+BIT20250619,Chinese Language,Thailand,Chinese Language and Culture,Chinese-taught,3.72,7.4,8.1,3,8.7,86.2,IELTS,7.686186375497626,HSK6,Admitted,Full Scholarship
+BIT20250094,Postgraduate,Malaysia,Cyberspace Science and Technology,English-taught,3.63,6.4,6.9,2,9.4,83.6,TOEFL,103.75971397366706,HSK3,Admitted,Partial Scholarship
+BIT20251368,Dual Degree,Kenya,Joint Computer Science Program,English-taught,2.75,4.8,0.5,0,7.2,55.2,IELTS,5.024464320091835,HSK1,Rejected,No Scholarship
+BIT20251264,Postgraduate,Mongolia,Information and Communication Engineering,English-taught,3.72,8.2,6.8,1,9.0,86.2,IELTS,8.377803896004455,HSK1,Admitted,Partial Scholarship
+BIT20250354,Undergraduate,Ethiopia,Humanities and Social Sciences,English-taught,2.85,0.5,4.8,0,5.6,56.7,TOEFL,79.79821837149213,HSK1,Rejected,No Scholarship
+BIT20250862,Postgraduate,Pakistan,Management Science and Engineering,English-taught,3.51,9.8,5.5,1,7.5,82.9,DUOLINGO,80.34811429077703,HSK2,Rejected,No Scholarship
+BIT20251604,Undergraduate,India,Law,English-taught,2.91,4.7,8.0,0,7.0,54.4,IELTS,4.536816522014779,HSK3,Rejected,No Scholarship
+BIT20250045,Undergraduate,Morocco,Mathematics and Statistics,English-taught,3.28,6.2,5.4,0,6.6,76.1,DUOLINGO,115.54848666661198,HSK1,Admitted,No Scholarship
+BIT20251105,Dual Degree,Malaysia,Joint Computer Science Program,English-taught,3.16,4.8,4.8,0,6.9,68.2,IELTS,6.199699140828235,HSK1,Admitted,No Scholarship
+BIT20251691,Undergraduate,India,Foreign Languages,Chinese-taught,2.86,7.4,5.9,2,8.0,70.8,DUOLINGO,97.90624510158644,HSK5,Admitted,No Scholarship
+BIT20251388,Undergraduate,Brazil,Computer Science and Technology,English-taught,3.09,6.7,4.8,0,6.6,72.5,IELTS,6.113066398957642,HSK1,Admitted,No Scholarship
+BIT20250341,Postgraduate,Kenya,Chemical Engineering and Technology,English-taught,3.26,4.9,6.8,1,7.8,74.4,TOEFL,97.15105616642914,HSK2,Admitted,No Scholarship
+BIT20251048,Undergraduate,Ethiopia,Law,English-taught,3.11,5.9,7.0,0,8.2,92.0,DUOLINGO,93.53009274368335,HSK2,Admitted,No Scholarship
+BIT20250567,Undergraduate,Mongolia,Automation,English-taught,2.86,5.1,6.2,0,5.2,70.5,IELTS,6.433927622113647,HSK1,Rejected,No Scholarship
+BIT20251992,Undergraduate,Morocco,Mechanical Engineering,Chinese-taught,1.95,3.9,5.9,1,8.2,63.3,IELTS,4.546025460285188,HSK3,Rejected,No Scholarship
+BIT20250491,Postgraduate,Kenya,Materials Science and Technology,English-taught,3.37,7.0,5.8,2,7.7,88.1,DUOLINGO,131.12350241709288,HSK3,Admitted,No Scholarship
+BIT20251295,Chinese Language,Ethiopia,Chinese Language and Culture,Chinese-taught,2.81,5.2,2.6,0,6.0,57.7,DUOLINGO,64.57209538647197,HSK4,Rejected,No Scholarship
+BIT20251550,Postgraduate,France,Optical Engineering,English-taught,2.66,3.6,3.8,0,6.5,40.8,DUOLINGO,64.9711109753925,HSK1,Rejected,No Scholarship
+BIT20250032,Undergraduate,Kazakhstan,Computer Science and Technology,Chinese-taught,3.83,9.0,6.9,2,8.6,97.5,DUOLINGO,128.19027339592483,HSK5,Admitted,Full Scholarship
+BIT20251016,Dual Degree,France,Joint Mechanical Engineering,Chinese-taught,3.66,8.0,6.9,1,8.8,77.9,TOEFL,90.14802395733712,HSK5,Admitted,Partial Scholarship
+BIT20251118,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,3.04,5.1,0.5,0,3.8,51.5,IELTS,5.818867635944982,HSK4,Rejected,No Scholarship
+BIT20251365,Postgraduate,Thailand,Education,Chinese-taught,3.79,7.3,7.1,2,9.1,87.0,IELTS,7.630095333169983,HSK5,Admitted,Partial Scholarship
+BIT20251804,Undergraduate,Indonesia,Law,English-taught,3.3,6.9,3.0,1,7.5,72.1,IELTS,6.957353384152269,HSK1,Admitted,Partial Scholarship
+BIT20250626,Undergraduate,Indonesia,Management,English-taught,2.47,3.4,4.1,0,6.1,45.1,DUOLINGO,74.97982533152339,HSK1,Rejected,No Scholarship
+BIT20251206,Chinese Language,France,Chinese Language and Culture,Chinese-taught,2.34,5.3,3.6,0,6.5,62.3,IELTS,6.09367188468535,HSK4,Rejected,No Scholarship
+BIT20251422,Postgraduate,Indonesia,Business Administration,English-taught,2.59,4.6,4.4,0,6.6,88.3,IELTS,4.344656603817369,HSK2,Rejected,No Scholarship
+BIT20250402,Dual Degree,Malaysia,Joint Mechanical Engineering,English-taught,3.72,7.3,5.6,4,8.8,86.4,TOEFL,96.39818754930764,HSK1,Admitted,Full Scholarship
+BIT20251185,Undergraduate,Morocco,Physics,English-taught,3.75,6.8,8.2,2,6.5,95.4,DUOLINGO,116.6682423310248,HSK3,Admitted,No Scholarship
+BIT20251245,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,2.39,4.0,4.4,0,8.4,76.4,IELTS,4.840445814207948,HSK3,Rejected,No Scholarship
+BIT20250977,Postgraduate,Malaysia,Mathematics,English-taught,2.82,6.8,6.2,1,5.3,68.9,IELTS,5.536404455894214,HSK1,Rejected,No Scholarship
+BIT20251864,Postgraduate,Pakistan,Chemical Engineering and Technology,English-taught,3.36,7.0,5.5,0,6.5,61.8,IELTS,6.650179292990671,HSK3,Rejected,No Scholarship
+BIT20251729,Chinese Language,Zimbabwe,Chinese Language and Culture,Chinese-taught,2.47,5.6,5.2,0,3.9,80.7,IELTS,3.735372382953273,HSK3,Rejected,No Scholarship
+BIT20250093,Chinese Language,Kazakhstan,Chinese Language and Culture,Chinese-taught,2.04,3.3,5.0,0,7.7,53.8,TOEFL,87.5447236745678,HSK4,Rejected,No Scholarship
+BIT20251958,Postgraduate,Indonesia,Optical Engineering,English-taught,2.95,4.3,5.1,0,6.4,69.6,IELTS,4.262727275123905,HSK1,Rejected,No Scholarship
+BIT20251182,Undergraduate,Pakistan,Physics,Chinese-taught,3.18,5.1,3.3,0,6.4,43.8,TOEFL,67.81503528942788,HSK4,Rejected,No Scholarship
+BIT20250245,Undergraduate,Kenya,Mathematics and Statistics,English-taught,3.58,8.9,8.2,2,8.5,85.7,TOEFL,107.76611986460436,HSK3,Admitted,Partial Scholarship
+BIT20251112,Undergraduate,Russia,Foreign Languages,English-taught,2.83,5.7,1.4,0,7.7,80.9,IELTS,4.331034218031426,HSK2,Rejected,No Scholarship
+BIT20251291,Undergraduate,Indonesia,Management,English-taught,2.39,5.0,1.9,0,6.6,77.8,IELTS,6.379017413311569,HSK2,Rejected,No Scholarship
+BIT20251292,Undergraduate,France,Materials Science and Engineering,English-taught,3.74,6.9,6.3,1,8.3,86.0,DUOLINGO,115.32709936661642,HSK2,Admitted,Partial Scholarship
+BIT20251101,Undergraduate,Indonesia,Optics and Photonics,English-taught,3.81,7.6,4.2,0,8.4,88.0,IELTS,7.277997455323816,HSK2,Admitted,Full Scholarship
+BIT20251473,Chinese Language,Malaysia,Chinese Language and Culture,Chinese-taught,2.82,8.2,1.1,0,5.1,63.5,TOEFL,80.87115832962606,HSK3,Rejected,No Scholarship
+BIT20251204,Undergraduate,Egypt,Life Science,Chinese-taught,2.29,6.1,4.9,0,3.4,60.0,TOEFL,61.87727582133215,HSK4,Rejected,No Scholarship
+BIT20250792,Postgraduate,Brazil,Cyberspace Science and Technology,English-taught,3.02,6.5,7.2,1,7.5,86.8,IELTS,6.589347856367654,HSK1,Admitted,No Scholarship
+BIT20250171,Postgraduate,Zimbabwe,Chemical Engineering and Technology,Chinese-taught,2.82,5.8,5.7,0,8.0,87.2,TOEFL,98.71365787877036,HSK4,Rejected,No Scholarship
+BIT20250571,Postgraduate,Malaysia,Law,English-taught,3.72,6.3,5.8,1,7.8,71.2,DUOLINGO,125.16230914357556,HSK1,Admitted,No Scholarship
+BIT20250513,Dual Degree,Ethiopia,Joint Computer Science Program,English-taught,3.21,3.9,1.7,1,4.8,57.5,DUOLINGO,123.97247444535115,HSK1,Rejected,No Scholarship
+BIT20251799,Undergraduate,Kenya,Materials Science and Engineering,Chinese-taught,2.89,7.4,5.5,0,5.2,71.1,DUOLINGO,98.13993247838224,HSK4,Rejected,No Scholarship
+BIT20251108,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,3.7,6.8,6.0,2,8.8,91.1,IELTS,7.738175079920104,HSK5,Admitted,Full Scholarship
+BIT20251591,Postgraduate,Zimbabwe,Chemical Engineering and Technology,Chinese-taught,3.19,4.7,8.6,0,8.7,73.0,TOEFL,94.3974869163213,HSK5,Admitted,No Scholarship
+BIT20251849,Chinese Language,Thailand,Chinese Language and Culture,Chinese-taught,3.53,6.8,7.2,0,7.5,68.9,DUOLINGO,74.32860093217542,HSK5,Admitted,Partial Scholarship
+BIT20251229,Dual Degree,Kenya,Joint Computer Science Program,English-taught,2.39,6.4,4.8,0,4.5,62.4,TOEFL,31.771016041555065,HSK3,Rejected,No Scholarship
+BIT20251719,Dual Degree,France,Joint Business Administration Program,English-taught,1.84,5.4,6.6,0,5.4,56.0,TOEFL,67.29551631400354,HSK1,Rejected,No Scholarship
+BIT20250938,Dual Degree,Indonesia,Joint Computer Science Program,English-taught,3.32,4.3,5.9,0,6.0,86.6,IELTS,6.267978633245864,HSK1,Admitted,No Scholarship
+BIT20251685,Undergraduate,Thailand,Life Science,Chinese-taught,3.25,5.4,5.9,1,8.0,76.0,DUOLINGO,81.89991159170002,HSK5,Admitted,No Scholarship
+BIT20250737,Undergraduate,Russia,Materials Science and Engineering,English-taught,3.75,5.8,7.1,0,4.8,80.7,TOEFL,85.30596765352581,HSK2,Rejected,No Scholarship
+BIT20251957,Postgraduate,India,Cyberspace Science and Technology,English-taught,2.68,3.6,4.6,0,6.7,64.3,IELTS,3.892308367760829,HSK1,Rejected,No Scholarship
+BIT20250328,Postgraduate,Mongolia,Biomedical Engineering,English-taught,2.27,6.5,0.3,0,6.9,73.2,IELTS,4.942959025992092,HSK2,Rejected,No Scholarship
+BIT20251345,Postgraduate,France,Management Science and Engineering,English-taught,2.97,5.6,4.4,1,6.7,63.3,IELTS,5.890250818468729,HSK2,Rejected,No Scholarship
+BIT20251408,Chinese Language,Brazil,Chinese Language and Culture,Chinese-taught,2.81,4.1,7.4,1,7.4,81.3,IELTS,6.702785450408295,HSK5,Admitted,No Scholarship
+BIT20250040,Postgraduate,Indonesia,Instrument Science and Technology,English-taught,2.94,7.1,4.8,1,7.2,75.8,DUOLINGO,134.62032755357993,HSK2,Rejected,No Scholarship
+BIT20250998,Undergraduate,Malaysia,Optics and Photonics,Chinese-taught,3.25,6.2,5.4,1,6.7,72.9,DUOLINGO,116.07875105182936,HSK5,Admitted,No Scholarship
+BIT20251328,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,1.89,3.8,3.9,0,5.9,48.7,IELTS,4.658937555778041,HSK3,Rejected,No Scholarship
+BIT20250812,Chinese Language,Brazil,Chinese Language and Culture,Chinese-taught,2.94,3.9,3.8,0,5.9,72.4,TOEFL,94.89631413351452,HSK4,Rejected,No Scholarship
+BIT20251673,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,3.02,3.5,4.1,0,7.7,83.2,TOEFL,54.17295396826748,HSK5,Admitted,No Scholarship
+BIT20250983,Undergraduate,Ethiopia,Management,English-taught,3.12,7.7,4.7,0,6.9,96.5,DUOLINGO,116.71071694571545,HSK2,Admitted,No Scholarship
+BIT20250589,Undergraduate,Kenya,Mechanical Engineering,Chinese-taught,3.06,5.1,3.7,0,6.3,94.4,TOEFL,94.5015808952168,HSK5,Admitted,No Scholarship
+BIT20251644,Postgraduate,Morocco,Design,Chinese-taught,2.27,5.9,2.8,0,8.0,57.4,TOEFL,81.06486483327102,HSK4,Rejected,No Scholarship
+BIT20251417,Undergraduate,Ethiopia,Mathematics and Statistics,Chinese-taught,2.54,3.9,5.5,1,5.3,74.9,IELTS,2.9232968513062123,HSK3,Rejected,No Scholarship
+BIT20251136,Undergraduate,India,Art and Design,English-taught,3.63,7.2,8.7,2,9.2,89.8,IELTS,7.86808861783887,HSK3,Admitted,Full Scholarship
+BIT20250271,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,3.0,5.1,9.2,0,7.0,64.3,DUOLINGO,105.2392889284082,HSK5,Admitted,No Scholarship
+BIT20250215,Postgraduate,France,Physics,English-taught,3.01,4.7,4.4,0,4.8,75.6,DUOLINGO,80.32270932459268,HSK1,Rejected,No Scholarship
+BIT20250623,Undergraduate,Mongolia,Mathematics and Statistics,English-taught,2.31,3.7,6.2,0,5.4,61.7,DUOLINGO,87.78877112179005,HSK2,Rejected,No Scholarship
+BIT20250549,Postgraduate,Zimbabwe,Mathematics,English-taught,3.17,4.6,4.6,0,4.4,73.5,IELTS,6.012328998027664,HSK1,Rejected,No Scholarship
+BIT20251106,Undergraduate,Brazil,Mathematics and Statistics,Chinese-taught,2.87,6.1,5.5,1,6.1,82.6,TOEFL,82.72566732661919,HSK4,Admitted,No Scholarship
+BIT20251137,Chinese Language,Thailand,Chinese Language and Culture,Chinese-taught,2.4,3.5,3.2,0,4.8,46.3,DUOLINGO,81.05768226302668,HSK3,Rejected,No Scholarship
+BIT20251109,Postgraduate,Thailand,Law,English-taught,2.24,2.5,5.1,0,5.9,62.6,IELTS,4.025165560717557,HSK2,Rejected,No Scholarship
+BIT20251255,Postgraduate,Russia,Education,English-taught,3.12,4.0,4.3,0,5.5,90.2,TOEFL,91.9682443332967,HSK1,Rejected,No Scholarship
+BIT20250434,Undergraduate,Malaysia,Chemistry and Chemical Engineering,Chinese-taught,3.59,7.7,7.9,1,9.7,91.9,TOEFL,103.58900896424691,HSK5,Admitted,Partial Scholarship
+BIT20251563,Chinese Language,Thailand,Chinese Language and Culture,Chinese-taught,3.86,7.9,7.5,2,8.2,97.8,TOEFL,101.96208720585156,HSK5,Admitted,Full Scholarship
+BIT20251822,Undergraduate,Ethiopia,Law,Chinese-taught,3.1,5.4,7.2,0,7.8,85.8,DUOLINGO,126.5561134618068,HSK5,Admitted,No Scholarship
+BIT20250742,Undergraduate,India,Mechanical Engineering,English-taught,3.56,5.1,6.7,0,7.4,70.6,TOEFL,91.6977781966186,HSK1,Admitted,No Scholarship
+BIT20250889,Undergraduate,Morocco,Art and Design,Chinese-taught,2.36,5.5,2.8,0,5.4,79.2,TOEFL,69.35825115446899,HSK3,Rejected,No Scholarship
+BIT20251074,Undergraduate,Mongolia,Foreign Languages,English-taught,2.04,4.5,8.6,1,7.7,84.1,DUOLINGO,28.74274277959556,HSK2,Rejected,No Scholarship
+BIT20250099,Undergraduate,France,Computer Science and Technology,English-taught,2.43,8.0,2.4,0,6.2,71.0,TOEFL,65.88832859472699,HSK1,Rejected,No Scholarship
+BIT20250273,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,2.39,5.4,4.2,0,5.4,84.7,IELTS,5.278006173843925,HSK3,Rejected,No Scholarship
+BIT20251241,Chinese Language,India,Chinese Language and Culture,Chinese-taught,3.82,7.0,5.5,2,8.0,74.6,TOEFL,98.48393200938258,HSK5,Admitted,Partial Scholarship
+BIT20250552,Chinese Language,Thailand,Chinese Language and Culture,Chinese-taught,3.28,7.2,6.3,0,4.9,92.5,IELTS,6.9023003619746754,HSK5,Rejected,No Scholarship
+BIT20251413,Undergraduate,Egypt,Mathematics and Statistics,English-taught,2.17,2.5,2.2,0,4.3,69.9,IELTS,5.568317755674445,HSK2,Rejected,No Scholarship
+BIT20251290,Undergraduate,Morocco,Mechanical Engineering,English-taught,2.93,3.0,3.7,0,5.0,61.8,DUOLINGO,50.33944602337506,HSK1,Rejected,No Scholarship
+BIT20251650,Postgraduate,Mongolia,Electronics Science and Technology,Chinese-taught,2.96,7.0,4.0,1,8.3,77.7,DUOLINGO,86.79490144151592,HSK4,Rejected,No Scholarship
+BIT20251491,Undergraduate,Morocco,Foreign Languages,English-taught,3.63,9.1,8.1,0,8.5,100.0,DUOLINGO,117.75041263366596,HSK2,Admitted,Full Scholarship
+BIT20250892,Chinese Language,France,Chinese Language and Culture,Chinese-taught,2.67,3.6,5.1,0,5.0,72.6,TOEFL,69.2977717926696,HSK3,Rejected,No Scholarship
+BIT20251455,Undergraduate,India,Management,Chinese-taught,2.16,2.4,2.6,0,3.8,74.0,DUOLINGO,105.90081147950237,HSK3,Rejected,No Scholarship
+BIT20251415,Postgraduate,Zimbabwe,Mathematics,Chinese-taught,2.11,2.1,4.8,0,4.2,64.7,TOEFL,48.55168466027396,HSK3,Rejected,No Scholarship
+BIT20250381,Undergraduate,Pakistan,Optics and Photonics,English-taught,3.83,8.8,5.8,2,8.3,87.5,DUOLINGO,116.77734344771468,HSK1,Admitted,Full Scholarship
+BIT20250124,Undergraduate,France,Physics,English-taught,2.35,6.1,4.7,0,6.3,89.5,IELTS,5.039952320197241,HSK2,Rejected,No Scholarship
+BIT20250958,Undergraduate,Zimbabwe,Cyberspace Science and Technology,English-taught,3.88,7.0,6.6,2,8.0,91.7,TOEFL,120.0,HSK2,Admitted,Full Scholarship
+BIT20251788,Postgraduate,Egypt,Mathematics,Chinese-taught,3.82,9.7,7.9,2,8.8,94.6,IELTS,6.943327152399163,HSK5,Admitted,Partial Scholarship
+BIT20251979,Chinese Language,Kenya,Chinese Language and Culture,Chinese-taught,3.38,3.8,8.3,0,8.5,77.2,IELTS,5.365651212863128,HSK4,Admitted,Partial Scholarship
+BIT20251512,Postgraduate,India,Computer Science and Technology,English-taught,2.94,4.1,4.0,0,7.4,60.8,IELTS,3.8620801766366135,HSK3,Rejected,No Scholarship
+BIT20250440,Undergraduate,Thailand,Chemistry and Chemical Engineering,Chinese-taught,3.62,6.0,8.1,4,8.6,92.2,DUOLINGO,138.8439814094719,HSK6,Admitted,Partial Scholarship
+BIT20251203,Undergraduate,France,Mathematics and Statistics,English-taught,3.7,7.3,9.9,2,6.4,86.1,IELTS,7.8564380709323345,HSK2,Admitted,No Scholarship
+BIT20250545,Postgraduate,Pakistan,Management Science and Engineering,English-taught,3.72,8.3,8.4,3,8.0,91.9,TOEFL,92.72718401110664,HSK1,Admitted,Full Scholarship
+BIT20250987,Postgraduate,Kazakhstan,Chemical Engineering and Technology,English-taught,2.43,4.7,3.7,0,5.8,46.7,IELTS,6.421842050159254,HSK1,Rejected,No Scholarship
+BIT20250692,Postgraduate,Ethiopia,Cyberspace Science and Technology,Chinese-taught,3.64,8.2,4.7,1,7.9,92.8,IELTS,7.091150930509167,HSK6,Admitted,No Scholarship
+BIT20251095,Undergraduate,Zimbabwe,Information and Electronics,Chinese-taught,2.2,3.9,2.8,0,5.8,62.3,IELTS,2.8152238596142154,HSK3,Rejected,No Scholarship
+BIT20250709,Undergraduate,Egypt,Automation,English-taught,3.04,8.0,4.1,0,5.6,57.7,DUOLINGO,0.0,HSK1,Rejected,No Scholarship
+BIT20250865,Postgraduate,Thailand,Design,English-taught,2.24,3.8,5.3,1,6.4,56.1,IELTS,3.906713098795932,HSK1,Rejected,No Scholarship
+BIT20250231,Chinese Language,France,Chinese Language and Culture,Chinese-taught,2.45,2.9,2.9,0,6.1,66.7,IELTS,4.17921766252858,HSK4,Rejected,No Scholarship
+BIT20251350,Undergraduate,Mongolia,Physics,English-taught,3.24,2.8,3.7,0,6.1,60.4,TOEFL,100.19371785523678,HSK1,Rejected,No Scholarship
+BIT20251731,Undergraduate,Kazakhstan,Chemistry and Chemical Engineering,Chinese-taught,2.85,8.1,5.4,0,6.5,72.5,DUOLINGO,128.60795438917208,HSK5,Admitted,No Scholarship
+BIT20250525,Chinese Language,Mongolia,Chinese Language and Culture,Chinese-taught,3.53,6.2,7.7,1,7.3,69.0,IELTS,7.699709921342012,HSK5,Admitted,Partial Scholarship
+BIT20250635,Undergraduate,Malaysia,Life Science,Chinese-taught,2.22,2.6,4.4,0,6.4,76.5,IELTS,4.503646036067672,HSK3,Rejected,No Scholarship
+BIT20251248,Undergraduate,Kenya,Computer Science and Technology,English-taught,2.78,2.4,1.7,0,5.5,56.6,IELTS,3.3268034939831117,HSK1,Rejected,No Scholarship
+BIT20250239,Postgraduate,Brazil,Optical Engineering,Chinese-taught,3.0,3.7,6.7,3,9.2,84.1,IELTS,6.848125785857541,HSK4,Admitted,No Scholarship
+BIT20251893,Chinese Language,France,Chinese Language and Culture,Chinese-taught,3.69,6.1,5.9,0,6.7,77.0,IELTS,4.812829989106079,HSK4,Admitted,No Scholarship
+BIT20250403,Postgraduate,Indonesia,Computer Science and Technology,English-taught,2.99,6.0,4.6,0,4.6,88.1,TOEFL,37.31994308751081,HSK1,Rejected,No Scholarship
+BIT20251153,Postgraduate,Kazakhstan,Computer Science and Technology,English-taught,3.62,3.1,5.2,0,8.9,67.9,TOEFL,102.25066519621382,HSK1,Admitted,No Scholarship
+BIT20251421,Undergraduate,Russia,Mechatronical Engineering,English-taught,3.7,7.0,10.0,3,8.3,91.6,TOEFL,108.51330850884727,HSK2,Admitted,Partial Scholarship
+BIT20250331,Undergraduate,Zimbabwe,Information and Electronics,Chinese-taught,3.38,6.2,5.8,1,6.5,66.6,IELTS,7.427341167316557,HSK4,Admitted,No Scholarship
+BIT20251989,Postgraduate,Kenya,Electronics Science and Technology,Chinese-taught,2.5,6.3,6.2,0,7.7,52.3,IELTS,4.697884735793713,HSK3,Rejected,No Scholarship
+BIT20250433,Postgraduate,Malaysia,Aeronautical and Astronautical Science and Technology,English-taught,3.6,4.0,3.2,1,6.2,64.1,IELTS,4.300883798955084,HSK1,Rejected,No Scholarship
+BIT20251024,Dual Degree,Morocco,Joint Business Administration Program,English-taught,3.63,10.0,6.2,2,9.4,80.5,TOEFL,107.8111394323274,HSK2,Admitted,Partial Scholarship
+BIT20250762,Undergraduate,Indonesia,Humanities and Social Sciences,English-taught,1.98,4.0,3.1,0,7.0,73.8,IELTS,5.971990093407622,HSK2,Rejected,No Scholarship
+BIT20251420,Dual Degree,Thailand,Joint Mechanical Engineering,English-taught,3.63,4.7,4.1,1,8.5,85.6,TOEFL,81.05531630757731,HSK2,Rejected,No Scholarship
+BIT20251001,Undergraduate,Indonesia,Computer Science and Technology,English-taught,2.11,3.7,5.5,0,8.6,78.6,TOEFL,82.41814117741758,HSK3,Rejected,No Scholarship
+BIT20251430,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,2.79,3.4,4.1,1,5.0,77.2,DUOLINGO,85.05107350751845,HSK3,Rejected,No Scholarship
+BIT20250936,Undergraduate,Thailand,Aerospace Engineering,English-taught,3.53,1.9,7.2,0,8.2,75.7,DUOLINGO,84.9625720964531,HSK1,Rejected,No Scholarship
+BIT20250356,Postgraduate,India,Mathematics,English-taught,3.64,8.7,7.2,0,6.4,88.7,DUOLINGO,130.05472356057464,HSK1,Admitted,No Scholarship
+BIT20251700,Postgraduate,Pakistan,Cyberspace Science and Technology,English-taught,2.65,5.1,2.0,0,3.4,82.7,DUOLINGO,99.3847150163652,HSK1,Rejected,No Scholarship
+BIT20250413,Dual Degree,Malaysia,Joint Computer Science Program,Chinese-taught,3.06,7.2,4.1,0,4.4,100.0,TOEFL,42.476710343756665,HSK3,Rejected,No Scholarship
+BIT20250194,Postgraduate,Russia,Physics,English-taught,3.54,7.0,8.2,5,8.7,93.0,TOEFL,106.71757343955068,HSK3,Admitted,Partial Scholarship
+BIT20251684,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,2.68,5.8,1.7,1,4.0,86.3,DUOLINGO,31.483488536940666,HSK4,Rejected,No Scholarship
+BIT20251394,Postgraduate,France,Control Science and Engineering,English-taught,2.76,6.1,2.7,1,8.2,80.8,TOEFL,91.83546380901038,HSK3,Rejected,No Scholarship
+BIT20251469,Chinese Language,Brazil,Chinese Language and Culture,Chinese-taught,2.85,8.3,7.4,2,7.9,80.2,TOEFL,117.19184444134406,HSK4,Admitted,No Scholarship
+BIT20250285,Postgraduate,Morocco,Applied Economics,English-taught,3.13,6.4,3.6,0,6.9,74.8,DUOLINGO,118.1384077997222,HSK1,Rejected,No Scholarship
+BIT20250431,Undergraduate,Kenya,Medical Technology,Chinese-taught,3.41,2.7,7.1,0,6.0,75.9,DUOLINGO,101.019473340836,HSK4,Rejected,No Scholarship
+BIT20250900,Undergraduate,Egypt,Optics and Photonics,Chinese-taught,2.27,4.9,4.1,0,6.4,75.3,IELTS,4.068644099578721,HSK3,Rejected,No Scholarship
+BIT20251352,Postgraduate,Kenya,Instrument Science and Technology,Chinese-taught,2.53,4.2,3.1,0,7.4,63.0,DUOLINGO,88.85459700451813,HSK3,Rejected,No Scholarship
+BIT20251412,Undergraduate,Brazil,Humanities and Social Sciences,English-taught,3.48,5.3,6.8,1,7.5,92.2,IELTS,6.242730444711958,HSK1,Admitted,Partial Scholarship
+BIT20251064,Postgraduate,Morocco,Electronics Science and Technology,English-taught,2.99,6.3,3.6,0,8.2,94.3,IELTS,6.165468691499907,HSK1,Rejected,No Scholarship
+BIT20251723,Undergraduate,Mongolia,Foreign Languages,Chinese-taught,3.25,5.9,6.6,0,7.6,96.0,IELTS,7.175172895461522,HSK5,Admitted,Partial Scholarship
+BIT20251580,Postgraduate,Kazakhstan,Statistics,Chinese-taught,3.42,8.3,4.3,0,6.5,70.6,IELTS,6.58351842196044,HSK5,Rejected,No Scholarship
+BIT20251099,Chinese Language,Kenya,Chinese Language and Culture,Chinese-taught,2.72,5.9,5.3,1,6.0,66.1,DUOLINGO,100.22817583651036,HSK3,Rejected,No Scholarship
+BIT20251167,Chinese Language,Kenya,Chinese Language and Culture,Chinese-taught,3.4,6.8,5.8,1,7.7,91.0,DUOLINGO,112.96088132363124,HSK4,Admitted,Partial Scholarship
+BIT20251917,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,3.09,6.3,6.3,1,7.4,71.5,IELTS,7.180995075621416,HSK5,Admitted,No Scholarship
+BIT20250683,Undergraduate,India,Mechatronical Engineering,English-taught,2.95,5.7,4.8,0,4.3,59.9,IELTS,4.859713474430153,HSK3,Rejected,No Scholarship
+BIT20251966,Postgraduate,Brazil,Computer Science and Technology,English-taught,2.34,3.6,1.9,0,4.3,85.8,IELTS,3.3730354213892424,HSK1,Rejected,No Scholarship
+BIT20250767,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,3.44,4.5,5.6,1,7.4,76.7,DUOLINGO,70.88152295941617,HSK4,Admitted,Partial Scholarship
+BIT20251384,Undergraduate,Indonesia,Computer Science and Technology,English-taught,3.78,8.4,5.6,1,8.2,77.1,TOEFL,101.7230369789729,HSK2,Admitted,Partial Scholarship
+BIT20250003,Postgraduate,Zimbabwe,Education,English-taught,2.75,3.8,1.7,0,4.7,57.3,TOEFL,75.16488293040194,HSK1,Rejected,No Scholarship
+BIT20251863,Undergraduate,Kenya,Optics and Photonics,English-taught,2.86,5.4,5.6,0,7.9,43.9,IELTS,4.524479018546013,HSK1,Rejected,No Scholarship
+BIT20251610,Postgraduate,Egypt,Instrument Science and Technology,English-taught,2.38,5.9,6.9,0,3.5,64.4,IELTS,4.7095614548933336,HSK1,Rejected,No Scholarship
+BIT20251358,Postgraduate,Ethiopia,Mathematics,English-taught,3.24,7.0,6.1,0,6.3,85.2,TOEFL,107.54664639236412,HSK1,Admitted,No Scholarship
+BIT20250129,Undergraduate,Malaysia,Chemistry and Chemical Engineering,Chinese-taught,3.17,5.0,4.4,0,5.1,50.2,TOEFL,87.38513794640697,HSK3,Rejected,No Scholarship
+BIT20250014,Undergraduate,Kazakhstan,Economics,English-taught,3.51,4.7,5.0,0,9.4,76.6,IELTS,7.0284991989772605,HSK2,Admitted,No Scholarship
+BIT20251752,Undergraduate,Zimbabwe,Art and Design,English-taught,3.29,7.2,6.4,3,7.9,64.2,IELTS,5.640223488929153,HSK2,Rejected,No Scholarship
+BIT20250230,Postgraduate,Mongolia,Cyberspace Science and Technology,Chinese-taught,3.6,6.2,6.2,0,8.2,79.5,TOEFL,103.84858353810117,HSK4,Admitted,No Scholarship
+BIT20251313,Postgraduate,Russia,Cyberspace Science and Technology,English-taught,3.55,7.9,4.4,1,8.2,74.0,TOEFL,86.47134442084725,HSK1,Rejected,No Scholarship
+BIT20250444,Undergraduate,Malaysia,Law,English-taught,3.67,8.2,8.5,4,7.9,96.9,IELTS,7.17528614266803,HSK3,Admitted,Partial Scholarship
+BIT20250146,Undergraduate,Morocco,Physics,English-taught,2.82,5.4,6.9,0,8.7,86.9,TOEFL,91.42232703114614,HSK1,Admitted,No Scholarship
+BIT20251564,Undergraduate,India,Automation,Chinese-taught,3.29,4.9,4.7,0,7.8,83.7,IELTS,6.66039535485757,HSK4,Admitted,No Scholarship
+BIT20250596,Postgraduate,Ethiopia,Mathematics,English-taught,2.2,2.0,1.4,0,6.5,85.5,DUOLINGO,63.78431953908622,HSK3,Rejected,No Scholarship
+BIT20251902,Undergraduate,Zimbabwe,Cyberspace Science and Technology,English-taught,3.07,7.0,5.4,0,7.7,49.8,TOEFL,87.92497723285346,HSK2,Rejected,No Scholarship
+BIT20250925,Postgraduate,Morocco,Law,English-taught,2.77,5.7,3.8,0,6.2,63.8,DUOLINGO,47.84655619982045,HSK1,Rejected,No Scholarship
+BIT20250198,Chinese Language,Mongolia,Chinese Language and Culture,Chinese-taught,2.02,3.2,2.1,0,6.8,68.8,IELTS,2.927226010103239,HSK4,Rejected,No Scholarship
+BIT20250044,Dual Degree,Brazil,Joint Business Administration Program,English-taught,3.64,7.7,6.8,3,9.5,82.3,IELTS,7.2632766648466065,HSK2,Admitted,Partial Scholarship
+BIT20250455,Undergraduate,Morocco,Materials Science and Engineering,Chinese-taught,2.05,5.6,4.6,0,8.8,86.3,IELTS,6.145911263930694,HSK3,Rejected,No Scholarship
+BIT20250912,Undergraduate,Pakistan,Mechanical Engineering,Chinese-taught,2.51,3.1,4.2,0,3.8,68.2,TOEFL,60.34668495131548,HSK3,Rejected,No Scholarship
+BIT20251047,Undergraduate,Morocco,Automation,Chinese-taught,3.02,1.7,6.3,0,5.3,63.9,IELTS,5.507862751645772,HSK4,Rejected,No Scholarship
+BIT20251426,Dual Degree,Egypt,Joint Computer Science Program,English-taught,2.63,4.1,5.2,0,6.8,70.2,TOEFL,65.34856699913333,HSK2,Rejected,No Scholarship
+BIT20251303,Undergraduate,Malaysia,Humanities and Social Sciences,English-taught,3.45,7.3,5.8,0,8.0,75.8,DUOLINGO,52.48155678980686,HSK2,Rejected,No Scholarship
+BIT20251506,Undergraduate,India,Computer Science and Technology,English-taught,3.5,6.3,4.9,1,6.4,72.8,IELTS,5.47395518689927,HSK1,Rejected,No Scholarship
+BIT20250301,Undergraduate,Mongolia,Optics and Photonics,English-taught,2.82,6.3,6.4,0,3.5,54.2,TOEFL,86.53883932467599,HSK1,Rejected,No Scholarship
+BIT20251207,Postgraduate,Pakistan,Physics,English-taught,3.28,7.8,5.0,0,8.2,78.8,DUOLINGO,52.81929791225139,HSK2,Rejected,No Scholarship
+BIT20250849,Postgraduate,Zimbabwe,Statistics,Chinese-taught,2.57,4.2,2.2,0,6.9,78.9,TOEFL,95.13113091036602,HSK4,Rejected,No Scholarship
+BIT20251170,Undergraduate,Zimbabwe,Medical Technology,English-taught,2.89,4.1,2.7,0,4.9,56.5,DUOLINGO,81.75677644749484,HSK1,Rejected,No Scholarship
+BIT20250011,Undergraduate,Brazil,Art and Design,English-taught,2.31,8.5,0.9,0,5.0,80.9,IELTS,4.662955221927237,HSK1,Rejected,No Scholarship
+BIT20251996,Postgraduate,Kazakhstan,Materials Science and Technology,Chinese-taught,3.52,6.7,8.0,0,6.6,65.8,TOEFL,99.40687449158308,HSK5,Admitted,No Scholarship
+BIT20251805,Undergraduate,Mongolia,Cyberspace Science and Technology,English-taught,3.85,7.8,5.4,2,7.8,88.4,DUOLINGO,117.27365135635549,HSK2,Admitted,Partial Scholarship
+BIT20251334,Dual Degree,Kazakhstan,Joint Mechanical Engineering,English-taught,3.76,7.0,9.0,2,8.1,86.1,DUOLINGO,131.57669438509586,HSK2,Admitted,Full Scholarship
+BIT20250406,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,3.26,6.3,6.3,0,10.0,80.1,IELTS,6.1239410294381775,HSK4,Admitted,Partial Scholarship
+BIT20250034,Dual Degree,Indonesia,Joint Computer Science Program,Chinese-taught,3.65,8.1,8.8,0,8.7,100.0,DUOLINGO,127.60768824711612,HSK6,Admitted,Full Scholarship
+BIT20251971,Undergraduate,France,Physics,English-taught,2.63,4.3,7.3,1,5.9,81.9,IELTS,5.232044788754239,HSK2,Rejected,No Scholarship
+BIT20251237,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,2.06,4.1,1.7,0,5.3,47.8,DUOLINGO,19.946503132822905,HSK3,Rejected,No Scholarship
+BIT20250084,Undergraduate,Morocco,Foreign Languages,English-taught,3.07,6.1,1.2,0,6.8,96.1,IELTS,6.932529224440279,HSK1,Admitted,No Scholarship
+BIT20251952,Undergraduate,Ethiopia,Mechatronical Engineering,English-taught,2.71,1.7,0.7,0,7.2,52.5,TOEFL,84.66924524298236,HSK1,Rejected,No Scholarship
+BIT20251661,Postgraduate,Brazil,Management Science and Engineering,English-taught,3.11,5.9,6.7,0,9.0,96.1,IELTS,6.525381828795446,HSK3,Admitted,No Scholarship
+BIT20251285,Undergraduate,Pakistan,Mechatronical Engineering,Chinese-taught,3.11,5.0,4.8,0,5.3,66.5,IELTS,6.392087769098184,HSK4,Rejected,No Scholarship
+BIT20250136,Undergraduate,Indonesia,Cyberspace Science and Technology,English-taught,3.27,6.8,3.3,0,6.8,90.3,DUOLINGO,120.99659226288088,HSK1,Admitted,No Scholarship
+BIT20251305,Postgraduate,Zimbabwe,Cyberspace Science and Technology,Chinese-taught,2.66,8.0,5.4,1,6.7,93.7,IELTS,5.310684901631417,HSK4,Rejected,No Scholarship
+BIT20250902,Undergraduate,Ethiopia,Cyberspace Science and Technology,English-taught,2.71,3.4,4.9,0,6.3,61.9,TOEFL,74.90339129056359,HSK1,Rejected,No Scholarship
+BIT20251477,Chinese Language,Ethiopia,Chinese Language and Culture,Chinese-taught,2.59,4.7,5.0,0,5.8,61.3,DUOLINGO,50.13396118741341,HSK3,Rejected,No Scholarship
+BIT20250945,Undergraduate,Zimbabwe,Mathematics and Statistics,Chinese-taught,2.49,4.1,3.7,0,5.5,61.5,DUOLINGO,57.51574784957156,HSK3,Rejected,No Scholarship
+BIT20251033,Undergraduate,Mongolia,Chemistry and Chemical Engineering,English-taught,3.02,7.9,6.3,0,5.7,79.1,TOEFL,55.4935911680016,HSK3,Rejected,No Scholarship
+BIT20250201,Postgraduate,Zimbabwe,Cyberspace Science and Technology,Chinese-taught,2.81,6.1,4.4,2,6.0,62.8,IELTS,4.207818822784788,HSK3,Rejected,No Scholarship
+BIT20251725,Postgraduate,Kazakhstan,Business Administration,Chinese-taught,2.57,7.2,1.0,0,5.9,56.9,IELTS,3.8481176017435015,HSK3,Rejected,No Scholarship
+BIT20251854,Chinese Language,India,Chinese Language and Culture,Chinese-taught,2.97,4.8,2.7,1,4.6,56.8,IELTS,4.188055566944777,HSK3,Rejected,No Scholarship
+BIT20250423,Undergraduate,Pakistan,Management,English-taught,3.83,6.9,8.0,1,9.2,91.6,IELTS,8.120974152160567,HSK3,Admitted,Full Scholarship
+BIT20251704,Postgraduate,Russia,Applied Economics,English-taught,2.47,0.8,5.7,0,5.1,68.0,DUOLINGO,95.85513020805324,HSK3,Rejected,No Scholarship
+BIT20250075,Postgraduate,Mongolia,Optical Engineering,English-taught,1.7,3.8,3.1,0,5.6,55.3,TOEFL,64.77889673830015,HSK1,Rejected,No Scholarship
+BIT20251482,Undergraduate,Morocco,Foreign Languages,Chinese-taught,2.79,4.8,3.0,0,5.9,66.6,IELTS,3.833022732149415,HSK3,Rejected,No Scholarship
+BIT20251698,Undergraduate,India,Chemistry and Chemical Engineering,English-taught,3.1,9.2,4.7,1,6.4,82.7,IELTS,7.150675919132891,HSK2,Admitted,No Scholarship
+BIT20251275,Postgraduate,Kazakhstan,Materials Science and Technology,English-taught,2.07,6.7,3.9,0,5.7,60.0,IELTS,6.8576749252773626,HSK1,Rejected,No Scholarship
+BIT20251584,Postgraduate,India,Information and Communication Engineering,English-taught,3.07,6.3,5.7,0,6.1,46.3,IELTS,5.5918555283654445,HSK2,Rejected,No Scholarship
+BIT20250754,Undergraduate,Zimbabwe,Life Science,English-taught,3.35,6.2,6.2,1,5.8,93.5,IELTS,7.592973199132635,HSK1,Rejected,No Scholarship
+BIT20251588,Postgraduate,Ethiopia,Electronics Science and Technology,English-taught,3.37,8.8,7.1,0,7.0,73.7,TOEFL,91.2143247880237,HSK1,Admitted,No Scholarship
+BIT20251846,Undergraduate,Egypt,Physics,English-taught,3.14,7.5,3.7,0,7.5,80.7,TOEFL,92.10108441500697,HSK3,Admitted,No Scholarship
+BIT20250899,Undergraduate,India,Humanities and Social Sciences,English-taught,2.23,8.1,3.5,0,8.1,51.7,IELTS,4.511370647599472,HSK1,Rejected,No Scholarship
+BIT20250845,Undergraduate,Zimbabwe,Cyberspace Science and Technology,English-taught,3.26,4.9,3.2,1,5.1,82.7,TOEFL,93.57980150008484,HSK2,Rejected,No Scholarship
+BIT20251015,Postgraduate,Kenya,Law,English-taught,3.97,7.7,7.1,1,8.6,83.7,TOEFL,119.48797340806036,HSK1,Admitted,Partial Scholarship
+BIT20251146,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,3.37,5.3,5.3,1,8.2,70.8,DUOLINGO,76.48112399234175,HSK4,Admitted,Partial Scholarship
+BIT20250192,Chinese Language,Brazil,Chinese Language and Culture,Chinese-taught,3.35,4.9,5.2,2,7.0,77.6,TOEFL,102.05964923749578,HSK4,Admitted,Partial Scholarship
+BIT20251502,Postgraduate,Morocco,Instrument Science and Technology,English-taught,3.18,3.9,4.8,0,6.5,69.9,IELTS,6.557349228472865,HSK2,Rejected,No Scholarship
+BIT20251896,Postgraduate,Malaysia,Biomedical Engineering,English-taught,2.67,6.2,4.2,0,5.6,61.0,IELTS,4.373121081328486,HSK1,Rejected,No Scholarship
+BIT20250368,Dual Degree,Kazakhstan,Joint Computer Science Program,English-taught,3.17,7.6,5.3,0,7.9,79.1,TOEFL,77.30480505036454,HSK1,Rejected,No Scholarship
+BIT20251130,Undergraduate,India,Economics,English-taught,2.91,5.4,6.4,0,6.3,62.0,IELTS,6.397764085875142,HSK2,Rejected,No Scholarship
+BIT20250220,Chinese Language,Kazakhstan,Chinese Language and Culture,Chinese-taught,1.79,6.6,2.5,0,7.1,72.7,TOEFL,69.86524202014874,HSK4,Rejected,No Scholarship
+BIT20251739,Undergraduate,Russia,Materials Science and Engineering,English-taught,2.94,5.0,3.6,1,6.6,62.7,DUOLINGO,76.41138033779919,HSK1,Rejected,No Scholarship
+BIT20250474,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,2.68,3.5,5.6,1,7.1,59.5,IELTS,3.698214647959025,HSK3,Rejected,No Scholarship
+BIT20251200,Undergraduate,Indonesia,Foreign Languages,English-taught,2.69,4.1,5.5,0,6.4,58.9,TOEFL,67.10203561383719,HSK3,Rejected,No Scholarship
+BIT20250883,Undergraduate,Brazil,Mechatronical Engineering,English-taught,2.6,5.6,6.4,0,4.3,65.2,TOEFL,67.27313184782764,HSK3,Rejected,No Scholarship
+BIT20251320,Undergraduate,Morocco,Mathematics and Statistics,English-taught,2.48,0.8,4.6,0,6.6,46.6,TOEFL,71.29832765266382,HSK1,Rejected,No Scholarship
+BIT20250383,Postgraduate,Thailand,Chemical Engineering and Technology,English-taught,2.48,3.6,2.0,0,6.3,44.2,TOEFL,87.15825492032609,HSK2,Rejected,No Scholarship
+BIT20251514,Undergraduate,Kazakhstan,Mechanical Engineering,English-taught,2.66,4.1,4.7,1,4.6,53.1,IELTS,4.1258731359398375,HSK3,Rejected,No Scholarship
+BIT20251271,Postgraduate,Morocco,Mechanical Engineering,English-taught,3.42,5.7,6.7,0,8.2,82.5,TOEFL,103.5203043261329,HSK2,Admitted,No Scholarship
+BIT20251407,Chinese Language,Mongolia,Chinese Language and Culture,Chinese-taught,3.63,7.6,5.1,0,7.6,83.2,IELTS,6.215200993413001,HSK4,Admitted,Partial Scholarship
+BIT20251492,Undergraduate,Kazakhstan,Law,English-taught,3.19,4.8,4.6,0,8.1,58.0,TOEFL,63.12081097886747,HSK3,Rejected,No Scholarship
+BIT20251980,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,3.51,6.5,6.2,0,9.6,92.7,DUOLINGO,149.92983392653355,HSK6,Admitted,Partial Scholarship
+BIT20251374,Postgraduate,Russia,Statistics,English-taught,3.42,7.3,7.1,1,6.2,84.5,TOEFL,80.93882344992785,HSK1,Rejected,No Scholarship
+BIT20251117,Undergraduate,Malaysia,Information and Electronics,English-taught,2.79,4.7,2.7,0,6.3,30.3,IELTS,4.8155886087662365,HSK1,Rejected,No Scholarship
+BIT20251461,Undergraduate,France,Automation,English-taught,3.26,5.8,5.5,1,7.2,77.3,TOEFL,77.90284631695909,HSK2,Rejected,No Scholarship
+BIT20251961,Undergraduate,Kenya,Information and Electronics,Chinese-taught,3.38,6.1,7.1,0,8.4,74.4,IELTS,6.591176996439959,HSK4,Admitted,Partial Scholarship
+BIT20251523,Undergraduate,Egypt,Law,Chinese-taught,2.3,5.5,5.8,0,6.2,71.4,IELTS,6.559146532627901,HSK4,Rejected,No Scholarship
+BIT20250763,Undergraduate,Indonesia,Information and Electronics,English-taught,3.65,7.2,9.6,2,8.6,86.3,IELTS,7.830720032420606,HSK1,Admitted,Partial Scholarship
+BIT20250005,Undergraduate,Morocco,Foreign Languages,English-taught,3.1,4.5,4.6,0,6.4,89.0,TOEFL,82.50619513673566,HSK1,Rejected,No Scholarship
+BIT20251123,Chinese Language,Malaysia,Chinese Language and Culture,Chinese-taught,2.4,5.8,4.0,0,4.5,59.7,IELTS,4.645937962312078,HSK3,Rejected,No Scholarship
+BIT20250394,Chinese Language,Zimbabwe,Chinese Language and Culture,Chinese-taught,2.83,6.1,2.9,0,6.0,84.9,TOEFL,99.3745393606119,HSK5,Admitted,No Scholarship
+BIT20250334,Undergraduate,Kenya,Medical Technology,Chinese-taught,2.57,8.1,4.8,0,6.5,76.0,DUOLINGO,31.740392696041734,HSK3,Rejected,No Scholarship
+BIT20250756,Chinese Language,Brazil,Chinese Language and Culture,Chinese-taught,3.56,8.2,6.3,1,10.0,95.6,DUOLINGO,116.999482248912,HSK5,Admitted,Partial Scholarship
+BIT20251598,Undergraduate,Pakistan,Management,Chinese-taught,2.45,2.5,2.2,0,4.5,73.4,TOEFL,80.5004272804623,HSK3,Rejected,No Scholarship
+BIT20251002,Postgraduate,Zimbabwe,Materials Science and Technology,English-taught,2.62,2.7,6.3,0,7.0,73.3,TOEFL,76.02271562909957,HSK2,Rejected,No Scholarship
+BIT20250224,Undergraduate,Egypt,Materials Science and Engineering,Chinese-taught,3.03,5.0,4.5,0,7.7,79.5,IELTS,6.456664959304424,HSK5,Admitted,No Scholarship
+BIT20250868,Undergraduate,Ethiopia,Humanities and Social Sciences,English-taught,3.14,6.4,4.7,0,7.7,84.2,IELTS,6.563999947458328,HSK1,Admitted,No Scholarship
+BIT20251244,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,2.71,5.6,7.2,0,7.8,72.0,DUOLINGO,81.672539523001,HSK5,Admitted,No Scholarship
+BIT20251286,Postgraduate,Kazakhstan,Electronics Science and Technology,English-taught,3.04,3.8,2.4,0,6.3,66.4,IELTS,4.699037769670004,HSK3,Rejected,No Scholarship
+BIT20250656,Undergraduate,Ethiopia,Physics,English-taught,3.39,4.8,3.3,0,5.7,100.0,DUOLINGO,71.22636284829728,HSK3,Rejected,No Scholarship
+BIT20250578,Dual Degree,Thailand,Joint Business Administration Program,English-taught,2.68,4.7,3.0,0,4.1,74.9,IELTS,6.710635269731907,HSK1,Rejected,No Scholarship
+BIT20251738,Undergraduate,Indonesia,Information and Electronics,Chinese-taught,2.53,0.0,1.3,0,6.2,68.9,TOEFL,58.36918966294584,HSK3,Rejected,No Scholarship
+BIT20250311,Postgraduate,Pakistan,Chemical Engineering and Technology,English-taught,2.89,8.5,6.9,1,7.7,88.6,DUOLINGO,99.87104102743976,HSK2,Admitted,No Scholarship
+BIT20250442,Dual Degree,Kenya,Joint Computer Science Program,English-taught,3.06,6.6,1.4,0,3.0,57.9,IELTS,5.710840715971275,HSK1,Rejected,No Scholarship
+BIT20250387,Undergraduate,Kazakhstan,Information and Electronics,English-taught,3.39,4.1,3.7,0,5.0,85.5,IELTS,6.065529400575459,HSK3,Rejected,No Scholarship
+BIT20250030,Undergraduate,Egypt,Law,English-taught,2.97,7.8,6.4,0,6.0,70.1,TOEFL,76.3814751521659,HSK3,Rejected,No Scholarship
+BIT20251872,Undergraduate,Kazakhstan,Aerospace Engineering,English-taught,2.79,7.6,3.9,0,7.6,39.0,TOEFL,111.14810723252664,HSK2,Rejected,No Scholarship
+BIT20251367,Postgraduate,Mongolia,Design,English-taught,3.7,8.1,9.1,1,7.7,75.1,TOEFL,114.64577994082536,HSK1,Admitted,Partial Scholarship
+BIT20250700,Postgraduate,Indonesia,Statistics,English-taught,3.84,7.2,7.0,1,8.9,82.1,TOEFL,115.29978141087986,HSK1,Admitted,Partial Scholarship
+BIT20251826,Postgraduate,Russia,Statistics,English-taught,3.01,2.6,4.4,0,6.1,73.8,DUOLINGO,111.20157396782176,HSK2,Rejected,No Scholarship
+BIT20250910,Undergraduate,Morocco,Materials Science and Engineering,English-taught,2.94,3.4,5.4,0,6.8,61.7,IELTS,5.189802943077018,HSK2,Rejected,No Scholarship
+BIT20250169,Undergraduate,Zimbabwe,Medical Technology,English-taught,3.67,7.5,7.8,3,8.5,100.0,TOEFL,102.30129552502738,HSK2,Admitted,Full Scholarship
+BIT20251659,Undergraduate,Russia,Mechatronical Engineering,Chinese-taught,2.62,7.6,5.7,1,7.7,71.6,IELTS,6.933903748262699,HSK5,Admitted,No Scholarship
+BIT20251252,Postgraduate,Thailand,Chemical Engineering and Technology,Chinese-taught,1.93,5.1,3.3,0,8.2,87.2,IELTS,4.871925397501946,HSK3,Rejected,No Scholarship
+BIT20250457,Undergraduate,Egypt,Mechatronical Engineering,English-taught,2.84,6.0,3.8,0,6.5,79.8,TOEFL,84.9189848171439,HSK1,Rejected,No Scholarship
+BIT20251890,Dual Degree,Kazakhstan,Joint Computer Science Program,English-taught,2.72,3.5,4.6,1,5.8,60.3,IELTS,5.316014375058745,HSK2,Rejected,No Scholarship
+BIT20250922,Postgraduate,Zimbabwe,Management Science and Engineering,English-taught,2.68,3.6,5.2,0,5.0,70.1,TOEFL,93.3355947499254,HSK2,Rejected,No Scholarship
+BIT20250287,Postgraduate,Brazil,Biomedical Engineering,English-taught,2.89,3.4,3.4,0,4.2,69.2,IELTS,4.934797091240866,HSK1,Rejected,No Scholarship
+BIT20250614,Undergraduate,Brazil,Materials Science and Engineering,English-taught,2.62,3.7,3.3,0,7.0,59.0,IELTS,5.145241861977048,HSK1,Rejected,No Scholarship
+BIT20250643,Undergraduate,Morocco,Aerospace Engineering,English-taught,2.98,5.5,7.2,0,9.0,82.3,IELTS,5.994522581376728,HSK1,Rejected,No Scholarship
+BIT20251640,Dual Degree,Thailand,Joint Computer Science Program,English-taught,2.25,5.0,4.9,0,4.2,88.7,TOEFL,87.09441512906027,HSK2,Rejected,No Scholarship
+BIT20251018,Postgraduate,Indonesia,Applied Economics,English-taught,2.63,1.9,5.5,0,4.2,34.1,TOEFL,31.35374588069561,HSK2,Rejected,No Scholarship
+BIT20250145,Undergraduate,Brazil,Mechatronical Engineering,English-taught,2.46,2.6,2.7,0,6.5,61.7,TOEFL,76.66176558509035,HSK1,Rejected,No Scholarship
+BIT20251590,Postgraduate,Pakistan,Statistics,English-taught,3.22,6.2,4.2,2,8.2,67.4,TOEFL,81.99576408702976,HSK3,Rejected,No Scholarship
+BIT20250467,Undergraduate,Morocco,Information and Electronics,Chinese-taught,2.71,4.7,3.4,0,4.8,61.6,TOEFL,38.685263077823805,HSK3,Rejected,No Scholarship
+BIT20251504,Undergraduate,France,Foreign Languages,English-taught,2.86,3.3,7.5,0,4.1,58.1,DUOLINGO,70.03759347876432,HSK1,Rejected,No Scholarship
+BIT20251114,Postgraduate,Malaysia,Physics,English-taught,3.21,6.6,2.9,1,7.2,83.2,TOEFL,98.3261170549276,HSK3,Rejected,No Scholarship
+BIT20251998,Undergraduate,Egypt,Art and Design,English-taught,3.73,3.4,6.4,0,7.8,87.7,TOEFL,89.52207254569254,HSK1,Rejected,No Scholarship
+BIT20251276,Undergraduate,Kazakhstan,Life Science,English-taught,3.02,4.5,4.0,0,6.1,72.7,TOEFL,100.84755411222793,HSK2,Rejected,No Scholarship
+BIT20251766,Undergraduate,Thailand,Art and Design,English-taught,3.91,8.3,7.1,0,7.9,93.4,TOEFL,111.72070080169208,HSK2,Admitted,Partial Scholarship
+BIT20251272,Chinese Language,France,Chinese Language and Culture,Chinese-taught,1.63,5.7,2.8,0,7.2,73.3,IELTS,4.131043171860348,HSK3,Rejected,No Scholarship
+BIT20250096,Postgraduate,India,Law,English-taught,2.69,5.2,4.8,0,7.4,90.4,IELTS,7.20679761436716,HSK2,Rejected,No Scholarship
+BIT20251294,Postgraduate,Malaysia,Mathematics,English-taught,3.41,6.2,6.0,0,5.0,92.0,DUOLINGO,65.27708253536191,HSK2,Rejected,No Scholarship
+BIT20250063,Chinese Language,France,Chinese Language and Culture,Chinese-taught,2.79,1.8,5.5,0,4.7,80.3,TOEFL,91.03383547609896,HSK3,Rejected,No Scholarship
+BIT20251397,Postgraduate,India,Materials Science and Technology,English-taught,2.44,2.6,1.8,1,5.2,76.6,TOEFL,58.08084332284147,HSK1,Rejected,No Scholarship
+BIT20250436,Postgraduate,Russia,Computer Science and Technology,Chinese-taught,3.17,4.0,3.1,0,5.8,51.3,TOEFL,75.49331183663026,HSK3,Rejected,No Scholarship
+BIT20250335,Undergraduate,Indonesia,Information and Electronics,English-taught,2.36,4.2,2.7,0,6.0,39.8,TOEFL,38.35685332330112,HSK1,Rejected,No Scholarship
+BIT20251792,Postgraduate,Pakistan,Electronics Science and Technology,English-taught,3.21,7.3,6.6,0,5.5,77.1,TOEFL,84.29460194391169,HSK1,Rejected,No Scholarship
+BIT20250608,Undergraduate,France,Physics,English-taught,3.73,8.9,8.7,2,9.0,89.4,DUOLINGO,122.94507239673123,HSK1,Admitted,Full Scholarship
+BIT20251874,Chinese Language,Ethiopia,Chinese Language and Culture,Chinese-taught,2.69,5.2,6.4,1,6.9,81.4,TOEFL,102.33732947071866,HSK5,Admitted,No Scholarship
+BIT20250815,Chinese Language,Zimbabwe,Chinese Language and Culture,Chinese-taught,3.52,7.7,4.7,0,5.8,80.7,IELTS,5.8802061409359965,HSK5,Rejected,No Scholarship
+BIT20250443,Undergraduate,Ethiopia,Life Science,Chinese-taught,3.34,6.6,5.5,1,6.5,83.4,DUOLINGO,102.86995323797552,HSK4,Admitted,No Scholarship
+BIT20250280,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,2.34,5.1,3.8,0,6.0,57.2,TOEFL,75.78254454153826,HSK3,Rejected,No Scholarship
+BIT20251006,Postgraduate,Brazil,Optical Engineering,English-taught,3.17,4.9,5.2,1,7.2,73.8,IELTS,6.296465156866175,HSK2,Rejected,No Scholarship
+BIT20251682,Dual Degree,Pakistan,Joint Mechanical Engineering,English-taught,3.01,6.2,3.4,0,7.0,65.4,IELTS,7.899805444564953,HSK3,Admitted,No Scholarship
+BIT20250068,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,2.5,6.6,3.8,0,5.8,46.3,TOEFL,113.7818213223868,HSK3,Rejected,No Scholarship
+BIT20251647,Undergraduate,Zimbabwe,Mathematics and Statistics,English-taught,2.72,5.2,5.0,0,8.2,74.0,TOEFL,74.52653558759148,HSK1,Rejected,No Scholarship
+BIT20251470,Chinese Language,Malaysia,Chinese Language and Culture,Chinese-taught,2.43,5.1,3.2,0,5.6,68.0,IELTS,5.578815231146752,HSK3,Rejected,No Scholarship
+BIT20250665,Undergraduate,India,Optics and Photonics,English-taught,2.44,4.6,8.7,2,6.6,78.5,DUOLINGO,136.62212243530558,HSK1,Rejected,No Scholarship
+BIT20250339,Postgraduate,France,Electronics Science and Technology,Chinese-taught,3.13,4.9,5.3,4,5.4,62.2,TOEFL,81.20145379167647,HSK5,Rejected,No Scholarship
+BIT20250405,Undergraduate,Egypt,Materials Science and Engineering,English-taught,3.71,4.3,4.3,2,7.1,75.7,DUOLINGO,93.50956410490367,HSK1,Admitted,No Scholarship
+BIT20250691,Undergraduate,Mongolia,Life Science,Chinese-taught,3.56,3.3,4.8,1,5.2,91.2,TOEFL,87.40420258769318,HSK4,Rejected,No Scholarship
+BIT20251654,Undergraduate,Brazil,Optics and Photonics,English-taught,1.99,5.2,5.5,0,4.4,77.5,IELTS,4.729903334295437,HSK2,Rejected,No Scholarship
+BIT20251069,Undergraduate,Thailand,Information and Electronics,English-taught,3.42,8.8,6.4,1,7.8,72.3,DUOLINGO,75.00791781590101,HSK3,Rejected,No Scholarship
+BIT20250418,Undergraduate,Russia,Information and Electronics,English-taught,2.33,2.5,6.3,0,4.6,61.0,TOEFL,78.03409768778509,HSK2,Rejected,No Scholarship
+BIT20251745,Postgraduate,Brazil,Biomedical Engineering,Chinese-taught,2.49,6.4,6.9,0,5.5,67.2,DUOLINGO,32.77305496694581,HSK3,Rejected,No Scholarship
+BIT20250646,Chinese Language,Pakistan,Chinese Language and Culture,Chinese-taught,2.73,2.7,3.3,0,5.3,57.2,IELTS,4.6012425780387805,HSK3,Rejected,No Scholarship
+BIT20251800,Undergraduate,Indonesia,Management,English-taught,3.22,3.3,2.0,0,7.3,57.7,TOEFL,87.68743591887394,HSK2,Rejected,No Scholarship
+BIT20250852,Postgraduate,France,Applied Economics,English-taught,2.73,5.5,2.8,0,4.2,83.1,IELTS,4.104338739736579,HSK2,Rejected,No Scholarship
+BIT20250941,Undergraduate,Kenya,Economics,English-taught,3.11,6.5,6.5,0,6.1,88.7,TOEFL,90.34634901140844,HSK1,Admitted,No Scholarship
+BIT20250673,Undergraduate,Russia,Information and Electronics,English-taught,3.21,6.8,3.6,0,7.4,69.7,IELTS,4.451889144604089,HSK2,Rejected,No Scholarship
+BIT20251754,Undergraduate,Kenya,Life Science,Chinese-taught,2.73,5.1,4.7,0,3.7,73.7,IELTS,4.866035103264937,HSK3,Rejected,No Scholarship
+BIT20251392,Undergraduate,Kenya,Automation,English-taught,3.72,4.1,3.9,1,7.5,74.0,DUOLINGO,124.79562873643135,HSK1,Admitted,No Scholarship
+BIT20251649,Chinese Language,Morocco,Chinese Language and Culture,Chinese-taught,2.33,2.0,0.1,0,4.6,80.8,TOEFL,101.07506569892962,HSK3,Rejected,No Scholarship
+BIT20250289,Undergraduate,Pakistan,Automation,English-taught,3.82,4.3,5.2,0,6.9,82.8,TOEFL,100.02003320247032,HSK1,Admitted,No Scholarship
+BIT20251432,Postgraduate,Thailand,Design,English-taught,2.47,4.9,6.6,1,7.0,67.7,TOEFL,81.47280061869536,HSK1,Rejected,No Scholarship
+BIT20251414,Undergraduate,Ethiopia,Materials Science and Engineering,English-taught,2.2,3.2,5.1,0,5.6,85.6,TOEFL,86.65139962186244,HSK1,Rejected,No Scholarship
+BIT20251914,Undergraduate,France,Optics and Photonics,Chinese-taught,2.38,1.1,4.3,0,4.6,56.1,IELTS,2.9740530775539376,HSK4,Rejected,No Scholarship
+BIT20251073,Undergraduate,India,Computer Science and Technology,Chinese-taught,3.38,5.0,6.3,0,6.5,81.6,TOEFL,87.90495376078199,HSK4,Admitted,No Scholarship
+BIT20251619,Postgraduate,Russia,Design,English-taught,1.7,4.5,4.2,0,6.3,56.4,IELTS,4.689568523090835,HSK2,Rejected,No Scholarship
+BIT20250682,Undergraduate,Thailand,Automation,English-taught,2.8,6.8,3.5,0,5.7,64.5,DUOLINGO,115.17105710076336,HSK1,Rejected,No Scholarship
+BIT20251267,Undergraduate,Zimbabwe,Humanities and Social Sciences,English-taught,2.55,5.3,4.1,0,7.2,69.1,IELTS,5.676300722753791,HSK1,Rejected,No Scholarship
+BIT20251781,Undergraduate,Kazakhstan,Economics,Chinese-taught,2.48,4.9,3.9,0,5.8,60.4,TOEFL,69.78434149694297,HSK3,Rejected,No Scholarship
+BIT20251056,Undergraduate,India,Information and Electronics,English-taught,3.44,5.2,5.5,2,6.7,92.1,IELTS,6.149310777733402,HSK1,Admitted,No Scholarship
+BIT20250243,Dual Degree,Egypt,Joint Mechanical Engineering,Chinese-taught,3.62,8.0,7.9,2,8.9,87.0,DUOLINGO,129.70454202971277,HSK5,Admitted,Full Scholarship
+BIT20251197,Dual Degree,Thailand,Joint Computer Science Program,English-taught,3.08,3.0,3.2,0,3.9,60.3,DUOLINGO,11.770077711298526,HSK2,Rejected,No Scholarship
+BIT20251714,Postgraduate,Ethiopia,Education,English-taught,2.23,4.6,3.2,0,6.6,64.0,DUOLINGO,97.03652617386572,HSK1,Rejected,No Scholarship
+BIT20250385,Postgraduate,Malaysia,Chemical Engineering and Technology,Chinese-taught,2.66,6.0,7.9,0,6.9,81.7,TOEFL,96.02931079562768,HSK4,Admitted,No Scholarship
+BIT20250002,Dual Degree,Mongolia,Joint Mechanical Engineering,English-taught,3.64,8.5,7.9,0,7.3,73.4,TOEFL,109.37973454480866,HSK2,Admitted,Partial Scholarship
+BIT20250128,Chinese Language,Russia,Chinese Language and Culture,Chinese-taught,3.36,7.1,3.8,0,7.5,87.8,IELTS,4.940476996975287,HSK5,Admitted,Partial Scholarship
+BIT20250581,Postgraduate,Kenya,Applied Economics,English-taught,3.6,6.1,8.2,1,9.0,82.6,IELTS,7.980300512389621,HSK3,Admitted,Partial Scholarship
+BIT20251651,Undergraduate,Indonesia,Mechanical Engineering,English-taught,3.64,8.0,7.3,0,9.1,86.8,TOEFL,104.69123421836352,HSK3,Admitted,Full Scholarship
+BIT20251832,Postgraduate,Morocco,Applied Economics,English-taught,2.32,4.1,5.8,0,4.2,87.4,TOEFL,79.79133592606766,HSK3,Rejected,No Scholarship
+BIT20250365,Dual Degree,India,Joint Computer Science Program,English-taught,3.05,5.0,6.8,0,4.7,75.8,IELTS,6.356025234500812,HSK1,Rejected,No Scholarship
+BIT20250121,Chinese Language,Indonesia,Chinese Language and Culture,Chinese-taught,3.07,5.4,7.4,1,6.7,74.8,IELTS,7.47594813316007,HSK4,Admitted,No Scholarship
+BIT20251596,Postgraduate,Zimbabwe,Instrument Science and Technology,English-taught,2.2,3.5,4.8,0,4.6,71.9,TOEFL,40.14383631364949,HSK3,Rejected,No Scholarship

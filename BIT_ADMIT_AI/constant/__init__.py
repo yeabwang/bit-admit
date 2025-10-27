@@ -16,7 +16,7 @@ TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 
 "Related to mongo ingestion"
-DA_COLLECTION_NAME: str = ""
+DA_COLLECTION_NAME: str = COLLECTION_NAME
 DA_DIR_NAME: str = os.getenv("COLLECTION_NAME", "unknown_collection").lower()
 DA_FEATURE_STORE_DIR: str = "feature_store"
 DA_INGESTED_DIR: str = "ingested_data"

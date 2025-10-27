@@ -17,7 +17,7 @@ def error_message_detail(error):
 
 
 class BitAdmitAIException(Exception):
-    def __init__(self, error_message):
+    def __init__(self, error_message, sys):
         """param: error_mesage: str format of the error from the error_message_detail()"""
         super().__init__(error_message)
         self.error_message = error_message_detail(error_message)
