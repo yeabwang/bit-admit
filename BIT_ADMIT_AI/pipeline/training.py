@@ -4,15 +4,18 @@ from BIT_ADMIT_AI.exceptions import BitAdmitAIException
 from BIT_ADMIT_AI.components.data_ingestion import DataIngestion
 from BIT_ADMIT_AI.components.data_validation import DataValidation
 from BIT_ADMIT_AI.components.data_transformation import DataTransformation
+from BIT_ADMIT_AI.components.model_trainer import ModelTrainer
 from BIT_ADMIT_AI.entity.config import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
+    ModelTrainerConfig,
 )
 from BIT_ADMIT_AI.entity.artifact import (
     DAArtifacts,
     DataValidationArtifact,
     DataTransformationArtifact,
+    ModelTrainerArtifact,
 )
 
 
@@ -21,6 +24,7 @@ class TrainingPipline:
         self.data_ingestion_config = DataIngestionConfig()
         self.data_val_config = DataValidationConfig()
         self.data_transformation_config = DataTransformationConfig()
+        self.model_trainer_config = ModelTrainerConfig()
 
     def start_ingestion(self):
         try:
@@ -71,6 +75,25 @@ class TrainingPipline:
         except Exception as e:
             raise BitAdmitAIException(e, sys) from e
 
+    def start_model_trainer(
+        self,
+        data_transformation_artifact: DataTransformationArtifact,
+    ) -> ModelTrainerArtifact:
+        try:
+            trainer = ModelTrainer(
+                data_transformation_artifact=data_transformation_artifact,
+                model_trainer_config=self.model_trainer_config,
+            )
+
+            model_trainer_artifact = trainer.initiate_model_trainer()
+
+            logging.info("Model training completed")
+
+            return model_trainer_artifact
+
+        except Exception as e:
+            raise BitAdmitAIException(e, sys) from e
+
     def run_pipeline(
         self,
     ) -> None:
@@ -79,9 +102,12 @@ class TrainingPipline:
             data_validation_artifact = self.start_data_validation(
                 data_ingestion_artifact
             )
-            _ = self.start_data_transformation(
+            data_transformation_artifact = self.start_data_transformation(
                 data_ingestion_artifact=data_ingestion_artifact,
                 data_validation_artifact=data_validation_artifact,
+            )
+            _ = self.start_model_trainer(
+                data_transformation_artifact=data_transformation_artifact,
             )
         except Exception as e:
             raise BitAdmitAIException(e, sys)

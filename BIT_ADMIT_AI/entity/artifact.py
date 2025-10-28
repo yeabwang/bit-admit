@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Dict, Optional
 
 
 @dataclass
@@ -31,4 +32,5 @@ class ClassMetricArtifact:
 @dataclass
 class ModelTrainerArtifact:
     trained_model_file_path: str
-    metric_artifact: ClassMetricArtifact
+    metrics_per_target: Dict[str, Dict[str, float]]
+    metric_artifact: Optional[ClassMetricArtifact] = None
