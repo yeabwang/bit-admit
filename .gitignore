@@ -49,7 +49,6 @@ results/
 *.ckpt
 
 # Config / secrets
-config/*.yaml
 config/*.yml
 config/*.json
 *.env

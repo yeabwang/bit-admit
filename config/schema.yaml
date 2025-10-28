@@ -1,0 +1,73 @@
+columns:
+  - application_id
+  - program_category
+  - country
+  - bit_program_applied
+  - degree_language
+  - previous_gpa
+  - math_physics_background_score
+  - research_alignment_score
+  - publication_count
+  - recommendation_strength
+  - interview_score
+  - english_test_type
+  - english_score
+  - chinese_proficiency
+  - admission_decision
+  - scholarship_tier
+
+numerical_columns:
+  - previous_gpa
+  - math_physics_background_score
+  - research_alignment_score
+  - publication_count
+  - recommendation_strength
+  - interview_score
+  - english_score
+
+categorical_columns:
+  - application_id
+  - program_category
+  - country
+  - bit_program_applied
+  - degree_language
+  - english_test_type
+  - chinese_proficiency
+  - admission_decision
+  - scholarship_tier
+
+dropped_columns:
+  - application_id
+  - country
+  - bit_program_applied
+  # replaced by encoded versions
+  - program_category
+  - degree_language
+  - english_test_type
+  - admission_decision
+  - scholarship_tier
+
+target_columns:
+  - admission_decision
+  - scholarship_tier
+
+encoded_columns:
+  - admission_decision_encoded
+  - scholarship_tier_encoded
+  - program_category_encoded
+  - degree_language_encoded
+  - english_test_type_encoded
+  - language_requirement_passed
+
+transformed_columns:
+  - publication_count
+  - chinese_proficiency
+  - admission_decision_encoded
+  - scholarship_tier_encoded
+  - program_category_encoded
+  - degree_language_encoded
+  - english_test_type_encoded
+
+engineered_columns:
+  - language_requirement_passed
+  - weighted_score
