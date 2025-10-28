@@ -68,3 +68,5 @@ pip-wheel-metadata/
 # Jupyter / Lightning
 .ipynb_checkpoints/
 .lightning_logs/
+
+notebook/catboost_info
