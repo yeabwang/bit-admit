@@ -1,5 +1,6 @@
 import os
 from dotenv import find_dotenv, load_dotenv
+from typing import List
 
 find_dotenv(raise_error_if_not_found=True)
 load_dotenv()
@@ -14,6 +15,9 @@ MODEL_FILE_NAME: str = "model.pkl"
 FILE_NAME = "admission_data.csv"
 TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
+TARGET_COLUMNS: List[str] = ["admission_decision", "scholarship_tier"]
+PREPROCESSING_OBJ_FILE: str = "preprocessing.pkl"
+SCHEMA_PATH = os.path.join("config", "schema.yaml")
 
 "Related to mongo ingestion"
 DA_COLLECTION_NAME: str = COLLECTION_NAME
@@ -21,3 +25,9 @@ DA_DIR_NAME: str = os.getenv("COLLECTION_NAME", "unknown_collection").lower()
 DA_FEATURE_STORE_DIR: str = "feature_store"
 DA_INGESTED_DIR: str = "ingested_data"
 DA_TRAIN_TEST_TEST_RATIO: float = 0.2
+
+
+"Related to validation"
+DATA_VAL_DIR_NAME: str = "data_validation"
+DATA_DRIFT_REPORT_DIR: str = "drift_report"
+DATA_DRIFT_REPORT_FILE_NAME: str = "report.yaml"

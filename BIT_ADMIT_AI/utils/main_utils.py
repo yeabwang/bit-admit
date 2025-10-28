@@ -6,7 +6,7 @@ from pandas import DataFrame
 
 from BIT_ADMIT_AI.logger import logging
 from BIT_ADMIT_AI.exceptions import BitAdmitAIException
-from data_generator import generate_dataset as _generate_dataset
+from BIT_ADMIT_AI.utils.data_generator import generate_dataset as _generate_dataset
 
 
 def generate_dataset() -> DataFrame:

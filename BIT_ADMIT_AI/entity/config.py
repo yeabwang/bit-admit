@@ -39,3 +39,13 @@ class SystemConfig:
     DATABASE_NAME = DATABASE_NAME
     COLLECTION_NAME = COLLECTION_NAME
     MONGODB_URL_KEY = MONGODB_URL_KEY
+
+
+@dataclass
+class DataValidationConfig:
+    data_validation_dir: str = os.path.join(
+        training_config.artifact_dir, DATA_VAL_DIR_NAME
+    )
+    drift_report_file_path: str = os.path.join(
+        data_validation_dir, DATA_DRIFT_REPORT_DIR, DATA_DRIFT_REPORT_FILE_NAME
+    )
