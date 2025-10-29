@@ -5,17 +5,21 @@ from BIT_ADMIT_AI.components.data_ingestion import DataIngestion
 from BIT_ADMIT_AI.components.data_validation import DataValidation
 from BIT_ADMIT_AI.components.data_transformation import DataTransformation
 from BIT_ADMIT_AI.components.model_trainer import ModelTrainer
+from BIT_ADMIT_AI.components.model_evaluation import ModelEvaluation
 from BIT_ADMIT_AI.entity.config import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
     ModelTrainerConfig,
+    ModelEvaluationConfig,
+    ModelPusherConfig,
 )
 from BIT_ADMIT_AI.entity.artifact import (
     DAArtifacts,
     DataValidationArtifact,
     DataTransformationArtifact,
     ModelTrainerArtifact,
+    ModelEvaluationArtifact,
 )
 
 
@@ -25,6 +29,8 @@ class TrainingPipline:
         self.data_val_config = DataValidationConfig()
         self.data_transformation_config = DataTransformationConfig()
         self.model_trainer_config = ModelTrainerConfig()
+        self.model_evaluation_config = ModelEvaluationConfig()
+        self.model_pusher_config = ModelPusherConfig()
 
     def start_ingestion(self):
         try:
@@ -94,6 +100,29 @@ class TrainingPipline:
         except Exception as e:
             raise BitAdmitAIException(e, sys) from e
 
+    def start_model_evaluation(
+        self,
+        model_trainer_artifact: ModelTrainerArtifact,
+    ) -> ModelEvaluationArtifact:
+        try:
+            evaluator = ModelEvaluation(
+                model_trainer_artifact=model_trainer_artifact,
+                model_evaluation_config=self.model_evaluation_config,
+                model_pusher_config=self.model_pusher_config,
+            )
+
+            evaluation_artifact = evaluator.evaluate_model()
+
+            logging.info(
+                "Model evaluation completed (accepted=%s)",
+                evaluation_artifact.is_model_accepted,
+            )
+
+            return evaluation_artifact
+
+        except Exception as e:
+            raise BitAdmitAIException(e, sys) from e
+
     def run_pipeline(
         self,
     ) -> None:
@@ -106,8 +135,11 @@ class TrainingPipline:
                 data_ingestion_artifact=data_ingestion_artifact,
                 data_validation_artifact=data_validation_artifact,
             )
-            _ = self.start_model_trainer(
+            model_trainer_artifact = self.start_model_trainer(
                 data_transformation_artifact=data_transformation_artifact,
+            )
+            _ = self.start_model_evaluation(
+                model_trainer_artifact=model_trainer_artifact,
             )
         except Exception as e:
             raise BitAdmitAIException(e, sys)

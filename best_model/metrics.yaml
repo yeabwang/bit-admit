@@ -1,0 +1,10 @@
+avg_f1_score: 0.97879902252641
+metrics_per_target:
+  admission_decision:
+    f1_score: 0.9849534706538599
+    precision_score: 0.9851221282072347
+    recall_score: 0.985
+  scholarship_tier:
+    f1_score: 0.9726445743989603
+    precision_score: 0.9733622232717054
+    recall_score: 0.9725

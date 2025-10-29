@@ -24,3 +24,5 @@ jinja2
 python-multipart
 rich
 pydantic<2
+litserve
+lightning

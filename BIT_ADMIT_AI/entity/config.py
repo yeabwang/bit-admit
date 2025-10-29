@@ -83,3 +83,18 @@ class ModelTrainerConfig:
     )
     expected_accuracy: float = MODEL_TRAINER_EXPECTED_SCORE
     model_config_file_path: str = MODEL_TRAINER_MODEL_CONFIG_FILE_PATH
+
+
+@dataclass
+class ModelEvaluationConfig:
+    best_model_dir: str = BEST_MODEL_DIR
+    best_model_path: str = BEST_MODEL_PATH
+    best_model_metrics_path: str = BEST_MODEL_METADATA_PATH
+    change_threshold: float = EVAL_CHANGED_THRESHOLD_SCORE
+
+
+@dataclass
+class ModelPusherConfig:
+    best_model_dir: str = BEST_MODEL_DIR
+    best_model_path: str = BEST_MODEL_PATH
+    best_model_metrics_path: str = BEST_MODEL_METADATA_PATH

@@ -46,6 +46,14 @@ MODEL_TRAINER_EXPECTED_SCORE: float = 0.9
 MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("config", "model.yaml")
 
 "Related to model evaluation"
-EVAL_CHANGED_THRESHOLD_SCORE: float = 0.02
-MODEL_BUCKET_NAME = ""
-MODEL_PUSHER_S3_KEY = ""
+EVAL_CHANGED_THRESHOLD_SCORE: float = 0.07
+
+
+"Related to the model pusher to lighting ai"
+BEST_MODEL_DIR: str = "best_model"
+BEST_MODEL_FILE: str = "model.pkl"
+BEST_MODEL_METADATA_FILE: str = "metrics.yaml"
+BEST_MODEL_PATH: str = os.path.join(BEST_MODEL_DIR, BEST_MODEL_FILE)
+BEST_MODEL_METADATA_PATH: str = os.path.join(
+	BEST_MODEL_DIR, BEST_MODEL_METADATA_FILE
+)

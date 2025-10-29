@@ -34,3 +34,18 @@ class ModelTrainerArtifact:
     trained_model_file_path: str
     metrics_per_target: Dict[str, Dict[str, float]]
     metric_artifact: Optional[ClassMetricArtifact] = None
+
+
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted: bool
+    improved_metric: float
+    current_metrics: Dict[str, Dict[str, float]]
+    best_model_path: str
+    best_model_metrics_path: str
+
+
+@dataclass
+class ModelPusherArtifact:
+    best_model_path: str
+    best_model_metrics_path: str
