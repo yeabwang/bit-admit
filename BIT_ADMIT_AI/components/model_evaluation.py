@@ -97,4 +97,3 @@ class ModelEvaluation:
 
         except Exception as exc:
             raise BitAdmitAIException(exc, sys) from exc
-

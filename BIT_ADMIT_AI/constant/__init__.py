@@ -54,6 +54,8 @@ BEST_MODEL_DIR: str = "best_model"
 BEST_MODEL_FILE: str = "model.pkl"
 BEST_MODEL_METADATA_FILE: str = "metrics.yaml"
 BEST_MODEL_PATH: str = os.path.join(BEST_MODEL_DIR, BEST_MODEL_FILE)
-BEST_MODEL_METADATA_PATH: str = os.path.join(
-	BEST_MODEL_DIR, BEST_MODEL_METADATA_FILE
-)
+BEST_MODEL_METADATA_PATH: str = os.path.join(BEST_MODEL_DIR, BEST_MODEL_METADATA_FILE)
+
+"Related to Fast api"
+APP_HOST = "0.0.0.0"
+APP_PORT = 8080
