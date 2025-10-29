@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 
 from BIT_ADMIT_AI.constant import TARGET_COLUMNS, BEST_MODEL_PATH
+from BIT_ADMIT_AI.components.data_transformation import DataTransformation
 from BIT_ADMIT_AI.entity.estimator import TargetValueMap
 from BIT_ADMIT_AI.exceptions import BitAdmitAIException
 from BIT_ADMIT_AI.logger import logging
@@ -49,10 +50,43 @@ class BitAdmitClassifier:
 		except Exception as exc:
 			raise BitAdmitAIException(exc, sys) from exc
 
+	@staticmethod
+	def _prepare_features(df: pd.DataFrame) -> pd.DataFrame:
+		processed = df.copy()
+
+		for column in ["program_category", "degree_language", "english_test_type"]:
+			if column in processed.columns:
+				processed[column] = DataTransformation._standardize_strings(processed[column])
+
+		if "publication_count" in processed.columns:
+			processed["publication_count"] = np.log1p(
+				processed["publication_count"].astype(float).clip(lower=0)
+			)
+
+		if "chinese_proficiency" in processed.columns:
+			standardized = DataTransformation._standardize_strings(
+				processed["chinese_proficiency"]
+			)
+			processed["chinese_proficiency"] = (
+				standardized.str.replace("hsk", "", regex=False)
+				.replace("", np.nan)
+				.astype(float)
+			)
+
+		processed["language_requirement_passed"] = processed.apply(
+			DataTransformation._language_requirement_passed, axis=1
+		)
+		processed["weighted_score"] = processed.apply(
+			DataTransformation._weighted_score, axis=1
+		)
+
+		return processed
+
 	def predict(self, features: BitAdmitFeatures) -> Dict[str, str]:
 		try:
 			input_df = features.to_dataframe()
-			transformed_features = self.preprocessor.transform(input_df)
+			engineered_df = self._prepare_features(input_df)
+			transformed_features = self.preprocessor.transform(engineered_df)
 
 			predictions: Dict[str, str] = {}
 

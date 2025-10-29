@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIT Admit AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/admission.css">
+</head>
+<body>
+    {% set data = input_data | default({}) %}
+    <div class="page-wrapper">
+        <aside class="form-column">
+            <div class="form-header">
+                <h1>Admissions Screening</h1>
+                <p>Provide applicant details to run predictions and visualize key readiness scores.</p>
+            </div>
+            <form id="admission-form" method="post" action="/predict">
+                <div class="input-group">
+                    <label for="program_category">Program Category</label>
+                    <select id="program_category" name="program_category" required>
+                        <option value="undergraduate" {% if data.get('program_category', 'undergraduate') == 'undergraduate' %}selected{% endif %}>Undergraduate</option>
+                        <option value="postgraduate" {% if data.get('program_category') == 'postgraduate' %}selected{% endif %}>Postgraduate</option>
+                        <option value="dual_degree" {% if data.get('program_category') == 'dual_degree' %}selected{% endif %}>Dual Degree</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="country">Country</label>
+                    <input id="country" name="country" type="text" placeholder="e.g., China" value="{{ data.get('country', '') }}" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="bit_program_applied">Program Applied</label>
+                    <input id="bit_program_applied" name="bit_program_applied" type="text" placeholder="e.g., Software Engineering" value="{{ data.get('bit_program_applied', '') }}" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="degree_language">Language of Instruction</label>
+                    <select id="degree_language" name="degree_language" required>
+                        <option value="english_taught" {% if data.get('degree_language', 'english_taught') == 'english_taught' %}selected{% endif %}>English taught</option>
+                        <option value="chinese_taught" {% if data.get('degree_language') == 'chinese_taught' %}selected{% endif %}>Chinese taught</option>
+                    </select>
+                </div>
+
+                <div class="conditional english-fields" {% if data and data.get('degree_language') == 'chinese_taught' %}hidden{% endif %}>
+                    <div class="input-group">
+                        <label for="english_test_type">English Test Type</label>
+                        <select id="english_test_type" name="english_test_type">
+                            <option value="toefl" {% if data.get('english_test_type', 'toefl') == 'toefl' %}selected{% endif %}>TOEFL</option>
+                            <option value="ielts" {% if data.get('english_test_type') == 'ielts' %}selected{% endif %}>IELTS</option>
+                            <option value="duolingo" {% if data.get('english_test_type') == 'duolingo' %}selected{% endif %}>Duolingo</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="english_score">English Score</label>
+                        <input id="english_score" name="english_score" type="number" step="1" min="0" max="120" placeholder="Score (0-120)" value="{{ data.get('english_score', '') }}">
+                    </div>
+                </div>
+
+                <div class="conditional chinese-fields" {% if not data or data.get('degree_language', 'english_taught') != 'chinese_taught' %}hidden{% endif %}>
+                    <div class="input-group">
+                        <label for="chinese_proficiency">HSK Level</label>
+                        <select id="chinese_proficiency" name="chinese_proficiency">
+                            <option value="hsk3" {% if data.get('chinese_proficiency') == 'hsk3' %}selected{% endif %}>HSK 3</option>
+                            <option value="hsk4" {% if data.get('chinese_proficiency') == 'hsk4' %}selected{% endif %}>HSK 4</option>
+                            <option value="hsk5" {% if data.get('chinese_proficiency') == 'hsk5' %}selected{% endif %}>HSK 5</option>
+                            <option value="hsk6" {% if data.get('chinese_proficiency') == 'hsk6' %}selected{% endif %}>HSK 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="previous_gpa">Previous GPA</label>
+                        <input id="previous_gpa" name="previous_gpa" type="number" step="0.01" min="0" max="4" placeholder="e.g., 3.6" value="{{ data.get('previous_gpa', '') }}" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="math_physics_background_score">Math & Physics Score</label>
+                        <input id="math_physics_background_score" name="math_physics_background_score" type="number" step="0.1" min="0" max="10" placeholder="0 - 10" value="{{ data.get('math_physics_background_score', '') }}" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="research_alignment_score">Research Alignment</label>
+                        <input id="research_alignment_score" name="research_alignment_score" type="number" step="0.1" min="0" max="10" placeholder="0 - 10" value="{{ data.get('research_alignment_score', '') }}" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="publication_count">Publication Count</label>
+                        <input id="publication_count" name="publication_count" type="number" step="1" min="0" placeholder="e.g., 2" value="{{ data.get('publication_count', '') }}" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="recommendation_strength">Recommendation Strength</label>
+                        <input id="recommendation_strength" name="recommendation_strength" type="number" step="0.1" min="0" max="10" placeholder="0 - 10" value="{{ data.get('recommendation_strength', '') }}" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="interview_score">Interview Score</label>
+                        <input id="interview_score" name="interview_score" type="number" step="0.1" min="0" max="100" placeholder="0 - 100" value="{{ data.get('interview_score', '') }}" required>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button class="submit-btn" type="submit">Generate Prediction</button>
+                </div>
+            </form>
+        </aside>
+
+        <section class="prediction-column">
+            <div class="radar-chart" id="radar-container">
+                <canvas id="radarCanvas"></canvas>
+            </div>
+
+            <div class="prediction-panel">
+                <div class="prediction-header">
+                    <h2>Prediction Results</h2>
+                    <span id="prediction-timestamp" class="placeholder">{{ prediction_timestamp or 'Awaiting input...' }}</span>
+                </div>
+                <div class="prediction-result" id="prediction-result">
+                    {% if predictions %}
+                        {% for key, value in predictions.items() %}
+                            <div class="prediction-card">
+                                <span>{{ key.replace('_', ' ')|title }}</span>
+                                <strong>{{ value }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="placeholder">Submit applicant details to see admission and scholarship predictions here.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        window.initialPredictions = JSON.parse('{{ (predictions | default(none)) | tojson | safe }}');
+        window.initialRadarData = JSON.parse('{{ (radar_data | default(none)) | tojson | safe }}');
+        window.initialTimestamp = JSON.parse('{{ (prediction_timestamp | default(none)) | tojson | safe }}');
+    </script>
+    <script src="/static/js/admission.js"></script>
+</body>
+</html>
