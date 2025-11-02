@@ -1,6 +1,6 @@
-Sorry for the less professional documentation.
+Hey, sorry for the less professional documentation.
 
-Its a school project, sorry currently very busy with the dev, documentation will follow later, I promise :)>
+Currently very busy with the dev, documentation will follow later, I promise :)
 
 How to run?
 
