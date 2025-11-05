@@ -1,1 +1,1 @@
-print('Hello, Lightning World!')
+print("夏雨 说, '清晰孕育一切酷.'")
