@@ -77,7 +77,7 @@ function renderRadarChart(dataPoints) {
         data: {
             labels: radarLabels,
             datasets: [{
-                label: "Normalized Scores",
+                label: "Scores(Normalized)",
                 data: dataPoints,
                 fill: true,
                 backgroundColor: "rgba(31, 111, 235, 0.15)",

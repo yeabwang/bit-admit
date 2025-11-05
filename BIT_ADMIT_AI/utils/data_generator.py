@@ -1,9 +1,18 @@
+"""
+data_generator.py
+-----------------
+Synthetic dataset generator for BIT admissions.
+Outputs a timestamped CSV under ./dataset and returns
+the in-memory DataFrame. Randomness is seeded for reproducibility.
+"""
+
 import pandas as pd
 import numpy as np
 import random
 from datetime import datetime
 from BIT_ADMIT_AI.logger import logging
 
+# intializing values(modeled after BIT admission form)
 np.random.seed(42)
 random.seed(42)
 n = 2000
@@ -87,7 +96,16 @@ countries = [
 english_tests = ["IELTS", "TOEFL", "DUOLINGO"]
 
 
-def select_program(cat):
+def select_program(cat: str) -> str:
+    """Select a program given a program category.
+
+    Args:
+        cat: Program category. One of {"Undergraduate", "Postgraduate",
+            "Chinese Language", "Dual Degree"}.
+
+    Returns:
+        str: Program name selected uniformly at random within the category.
+    """
     if cat == "Undergraduate":
         return random.choice(undergraduate_programs)
     if cat == "Postgraduate":
@@ -97,13 +115,32 @@ def select_program(cat):
     return random.choice(dual_degree_programs)
 
 
-def language_logic(cat):
+def language_logic(cat: str) -> str:
+    """Decide teaching language from the program category.
+
+    Args:
+        cat: Program category.
+
+    Returns:
+        "English-taught" or "Chinese-taught". Chinese Language is ofc always
+        "Chinese-taught".
+    """
     if cat in ["Undergraduate", "Postgraduate", "Dual Degree"]:
         return np.random.choice(["English-taught", "Chinese-taught"], p=[0.7, 0.3])
     return "Chinese-taught"
 
 
-def gen_lang_score(test, quality_class):
+# For english programs
+def gen_lang_score(test: str, quality_class: str) -> float:
+    """Generate an English test score conditioned on applicant quality.
+
+    Args:
+        test: One of {"TOEFL", "IELTS", "DUOLINGO"}.
+        quality_class: Applicant quality band: {"low", "mid", "high"}.
+
+    Returns:
+        Float score within the test’s valid range. Returns 0.0 for unknown test types.
+    """
     if test == "TOEFL":
         mean = {"high": 105, "mid": 92, "low": 75}[quality_class]
         sd = {"high": 8, "mid": 12, "low": 20}[quality_class]
@@ -119,7 +156,17 @@ def gen_lang_score(test, quality_class):
     return 0.0
 
 
-def assign_chinese_proficiency(lang, quality_class):
+# for chinise programs(mainly but we gave English lang students HSK1 by default)
+def assign_chinese_proficiency(lang: str, quality_class: str) -> str:
+    """Assign an HSK level based on degree language and quality.
+
+    Args:
+        lang: "English-taught" or "Chinese-taught".
+        quality_class: Applicant quality band: {"low", "mid", "high"}.
+
+    Returns:
+        HSK level string (HSK1 - HSK6).
+    """
     if lang != "Chinese-taught":
         return np.random.choice(["HSK1", "HSK2", "HSK3"], p=[0.5, 0.3, 0.2])
     if quality_class == "high":
@@ -129,7 +176,19 @@ def assign_chinese_proficiency(lang, quality_class):
     return np.random.choice(["HSK3", "HSK4"], p=[0.7, 0.3])
 
 
-def assign_targets(row):
+# who passed or failed( Business logic, check the read me for full details)
+def assign_targets(row: pd.Series) -> pd.Series:
+    """Compute admission decision and scholarship tier from applicant features.
+
+    Enforces language minima, computes a composite score, and maps it to
+    decision/scholarship outcomes.
+
+    Args:
+        row: pandas Series with required fields
+
+    Returns:
+        pandas.Series of length 2: [admission_decision, scholarship_tier].
+    """
     if row.previous_gpa < 2.5:
         return pd.Series(["Rejected", "No Scholarship"])
     if row.recommendation_strength < 6 or row.interview_score < 60:
@@ -177,6 +236,16 @@ def assign_targets(row):
 
 
 def generate_dataset():
+    """Generate the synthetic admissions dataset and persist it.
+
+    Creates n rows (see module constant `n`) data frame and save it in the datasets folder
+
+    Returns:
+        pandas.DataFrame with all generated features and labels.
+
+    Side Effects:
+        Writes CSV to ./dataset/BIT_Admissions_<timestamp>.csv and logs progress.
+    """
     df = pd.DataFrame(
         {
             "application_id": [f"BIT2025{str(i).zfill(4)}" for i in range(1, n + 1)],
@@ -206,7 +275,7 @@ def generate_dataset():
         2,
     )
 
-    # Math/Physics background - quality correlated
+    # Math/Physics background(CSCA) - The new chinise admission test
     df["math_physics_background_score"] = np.round(
         np.clip(
             np.where(
@@ -303,7 +372,7 @@ def generate_dataset():
     df["admission_decision"] = target.iloc[:, 0]
     df["scholarship_tier"] = target.iloc[:, 1]
 
-    # Drop quality_class as it's only a generation helper, not a real feature
+    # Drop quality_class as it's only a helper, not a real feature
     df = df.drop(columns=["quality_class"])
 
     file_path = f"./dataset/BIT_Admissions_{time_string}.csv"
