@@ -1,3 +1,20 @@
+"""Model training component.
+
+Trains one classifier per target, optionally performs grid search with CV,
+evaluates candidates via weighted F1, and packages the best models together
+with the preprocessing bundle for inference.
+
+Inputs:
+- transformed train/test arrays and preprocessor bundle from DataTransformation,
+- model.yaml (model candidates, search grids, and grid search settings).
+
+Outputs:
+- trained model package persisted to ModelTrainerConfig.trained_model_file_path,
+- ModelTrainerArtifact with per-target metrics.
+
+Raises:
+- BitAdmitAIException: On data loading, training, or persistence errors.
+"""
 import importlib
 import sys
 from typing import Dict
@@ -25,13 +42,27 @@ from BIT_ADMIT_AI.utils.main_utils import (
 
 
 class ModelTrainer:
-    """Train per-target classifiers and persist the inference bundle."""
+    """Train per-target classifiers and persist the inference bundle.
 
+    Args:
+        data_transformation_artifact: Paths to transformed arrays and preprocessor.
+        model_trainer_config: Paths and thresholds for trainer outputs.
+
+    Attributes:
+        data_transformation_artifact: Stored transformation artifact.
+        model_trainer_config: Stored trainer config.
+        model_config: Parsed model.yaml configuration.
+    """
     def __init__(
         self,
         data_transformation_artifact: DataTransformationArtifact,
         model_trainer_config: ModelTrainerConfig,
     ) -> None:
+        """Initialize trainer and load model configuration.
+
+        Raises:
+            BitAdmitAIException: If config loading fails.
+        """
         try:
             self.data_transformation_artifact = data_transformation_artifact
             self.model_trainer_config = model_trainer_config
@@ -67,7 +98,7 @@ class ModelTrainer:
         module = importlib.import_module(model_info["module"])
         estimator_cls = getattr(module, model_info["class"])
         params = model_info.get("params", {}).copy()
-        params.pop("use_label_encoder", None)  # Drop deprecated XGBoost flag
+        params.pop("use_label_encoder", None)  # Dropin deprecated XGBoost flag
 
         if model_info["module"].startswith("xgboost") and num_classes > 2:
             params.setdefault("objective", "multi:softprob")
@@ -232,6 +263,20 @@ class ModelTrainer:
         return best_model, best_metrics
 
     def initiate_model_trainer(self) -> ModelTrainerArtifact:
+        """Run training for all targets and persist the model package.
+
+        Steps:
+        - load transformed train/test arrays and preprocessor,
+        - split into features/targets,
+        - for each target: train candidates, select best,
+        - build inference package and save to folder.
+
+        Returns:
+            ModelTrainerArtifact: Path to trained package and per-target metrics.
+
+        Raises:
+            BitAdmitAIException: On data loading, training, or save failure.
+        """
         try:
             train_arr, test_arr, preprocessor_bundle = self._load_transformed_datasets()
 

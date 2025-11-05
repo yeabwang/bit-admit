@@ -1,3 +1,10 @@
+"""Model evaluation component.
+
+Compares the newly trained model against the current best using average F1 across
+targets. Accepts and pushes the new model if the improvement meets the configured
+threshold, and returns a ModelEvaluationArtifact summarizing the decision.
+"""
+
 import sys
 from pathlib import Path
 from typing import Dict, Optional
@@ -18,6 +25,19 @@ from BIT_ADMIT_AI.utils.main_utils import read_yaml_file
 
 
 class ModelEvaluation:
+    """Evaluate a trained model against the current best and optionally promote it.
+
+    Args:
+        model_trainer_artifact: Outputs from training (path, per-target metrics).
+        model_evaluation_config: Thresholds and best-model metadata paths.
+        model_pusher_config: Destinations for promoted model and its metrics.
+
+    Attributes:
+        model_trainer_artifact: Training outputs for the candidate model.
+        model_evaluation_config: Evaluation parameters and paths.
+        model_pusher_config: Promotion target locations.
+    """
+
     def __init__(
         self,
         model_trainer_artifact: ModelTrainerArtifact,
@@ -43,6 +63,20 @@ class ModelEvaluation:
             raise BitAdmitAIException(exc, sys) from exc
 
     def evaluate_model(self) -> ModelEvaluationArtifact:
+        """Compare candidate to best model and optionally push the candidate.
+
+        Logic:
+        - compute candidate avg F1 over targets,
+        - load prior best avg F1 if available,
+        - accept if improvement >= change_threshold (or no prior best),
+        - on acceptance, push the model(in our case save it to dir) and persist metrics.
+
+        Returns:
+            ModelEvaluationArtifact: Decision, improvement, and reference paths.
+
+        Raises:
+            BitAdmitAIException: If evaluation or push fails.
+        """
         try:
             current_metrics = self.model_trainer_artifact.metrics_per_target
             current_avg_f1 = self._average_f1(current_metrics)

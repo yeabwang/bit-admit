@@ -1,8 +1,21 @@
+"""Data validation component.
+
+Validates schema compliance and detects data drift between train/test using Evidently.
+- Ensures column count and required columns match schema.yaml.
+- Generates and saves a drift report (YAML/JSON structure).
+- Returns a DataValidationArtifact summarizing status and report path.
+
+Raises:
+    BitAdmitAIException: On IO, schema load, or validation/drift computation failure.
+"""
+
 import json
 import sys
 import warnings
 
-warnings.filterwarnings("ignore", category=UserWarning, module="evidently")
+warnings.filterwarnings(
+    "ignore", category=UserWarning, module="evidently"
+)  # version upgrade warrning contains breaking changes
 
 
 import pandas as pd
@@ -20,11 +33,28 @@ from BIT_ADMIT_AI.constant import SCHEMA_PATH
 
 
 class DataValidation:
+    """Validate dataset against schema and detect drift.
+
+    Args:
+        data_ingestion_artifact: Train/test file paths from ingestion.
+        data_validation_config: Output paths
+
+    Attributes:
+        data_ingestion_artifact: Stored ingestion artifact.
+        data_validation_config: Stored validation config.
+        _schema_config: Parsed schema.yaml content.
+    """
+
     def __init__(
         self,
         data_ingestion_artifact: DAArtifacts,
         data_validation_config: DataValidationConfig,
     ):
+        """Initialize validation stage and load schema.
+
+        Raises:
+            BitAdmitAIException: If schema loading fails.
+        """
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_config = data_validation_config
@@ -35,6 +65,17 @@ class DataValidation:
 
     @staticmethod
     def read_data(file_path: str) -> DataFrame:
+        """Read CSV data.
+
+        Args:
+            file_path: Path to CSV file.
+
+        Returns:
+            pandas.DataFrame: Loaded data.
+
+        Raises:
+            BitAdmitAIException: If read fails.
+        """
         try:
             return pd.read_csv(file_path)
         except Exception as e:
@@ -42,6 +83,17 @@ class DataValidation:
             raise BitAdmitAIException(e, sys) from e
 
     def validate_num_of_col(self, dataframe: DataFrame) -> bool:
+        """Check column count equals schema-defined count.
+
+        Args:
+            dataframe: DataFrame to validate.
+
+        Returns:
+            bool: True if counts match.
+
+        Raises:
+            BitAdmitAIException: On validation error.
+        """
         try:
             status = len(dataframe.columns) == len(self._schema_config["columns"])
             logging.info(f"Is required column present: [{status}]")
@@ -51,6 +103,17 @@ class DataValidation:
             raise BitAdmitAIException(e, sys)
 
     def is_column_exist(self, df: DataFrame) -> bool:
+        """Ensure all required numerical and categorical columns are present.
+
+        Args:
+            df: DataFrame to check.
+
+        Returns:
+            bool: True if all required columns exist; False otherwise.
+
+        Raises:
+            BitAdmitAIException: On validation error.
+        """
         try:
             dataframe_columns = df.columns
             missing_num_columns = []
@@ -83,6 +146,18 @@ class DataValidation:
         reference_df: DataFrame,
         current_df: DataFrame,
     ) -> bool:
+        """Run Evidently data drift profile and persist the report.
+
+        Args:
+            reference_df: Reference dataset.
+            current_df: Current dataset to compare.
+
+        Returns:
+            bool: True if dataset-level drift is detected.
+
+        Raises:
+            BitAdmitAIException: If profiling or write fails.
+        """
         try:
             data_drift_profile = Profile(sections=[DataDriftProfileSection()])
 
@@ -108,7 +183,14 @@ class DataValidation:
             raise BitAdmitAIException(e, sys) from e
 
     def init_data_validation(self) -> DataValidationArtifact:
+        """Orchestrate validation: schema checks and drift detection.
 
+        Returns:
+            DataValidationArtifact: Validation status, message, and report path.
+
+        Raises:
+            BitAdmitAIException: On any step failure.
+        """
         try:
             validation_error_msg = ""
             logging.info("Starting data validation")

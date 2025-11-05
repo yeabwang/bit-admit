@@ -1,3 +1,12 @@
+"""Model pusher component.
+
+Promotes an accepted trained model to "best model" by:
+- copying the trained artifact to the best model location,
+- writing accompanying metrics (avg F1 and per-target) as YAML.
+
+Used by ModelEvaluation after acceptance.
+"""
+
 import os
 import shutil
 import sys
@@ -12,6 +21,13 @@ from BIT_ADMIT_AI.utils.main_utils import write_yaml_file
 
 
 class ModelPusher:
+    """Push/promote the trained model to the best-model directory.
+
+    Args:
+        model_trainer_artifact: Trained model path and metrics from training.
+        model_pusher_config: Destinations for best model and its metrics.
+    """
+
     def __init__(
         self,
         model_trainer_artifact: ModelTrainerArtifact,
@@ -25,6 +41,18 @@ class ModelPusher:
         metrics_per_target: Dict[str, Dict[str, float]],
         avg_f1_score: float,
     ) -> ModelPusherArtifact:
+        """Copy the candidate model to best path and persist metrics YAML.
+
+        Args:
+            metrics_per_target: Dict[target -> {metric_name: value}] from training.
+            avg_f1_score: Average F1 across targets for the candidate.
+
+        Returns:
+            ModelPusherArtifact: Paths to the promoted model and metrics file.
+
+        Raises:
+            BitAdmitAIException: If file operations or metadata write fail.
+        """
         try:
             os.makedirs(self.model_pusher_config.best_model_dir, exist_ok=True)
 
