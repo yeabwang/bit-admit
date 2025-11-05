@@ -1,3 +1,6 @@
+"""
+Helper modile which creates folder structure for your MLOPS project
+"""
 import os
 from pathlib import Path
 from BIT_ADMIT_AI.logger import logging
