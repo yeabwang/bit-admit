@@ -1,3 +1,16 @@
+"""Data transformation component.
+
+Prepares model-ready arrays and persists transformation artifacts:
+- reads train/test CSVs,
+- engineers features and standardizes strings,
+- builds/fits a ColumnTransformer (num: impute+scale, cat: impute+OHE),
+- encodes target columns,
+- saves preprocessor bundle and transformed arrays.
+
+Relies on schema.yaml (columns, drops) and a passing DataValidationArtifact.
+Outputs are written to paths from DataTransformationConfig.
+"""
+
 import sys
 from typing import Dict, List, Tuple
 
@@ -34,6 +47,16 @@ class DataTransformation:
         data_transformation_config: DataTransformationConfig,
         data_validation_artifact: DataValidationArtifact,
     ) -> None:
+        """Initialize the component with artifacts and config.
+
+        Args:
+            data_ingestion_artifact: Train/test file paths from ingestion.
+            data_transformation_config: Output locations for arrays/objects.
+            data_validation_artifact: Validation result gating transformation.
+
+        Raises:
+            BitAdmitAIException: If schema/config loading fails.
+        """
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_transformation_config = data_transformation_config
@@ -44,6 +67,17 @@ class DataTransformation:
 
     @staticmethod
     def read_data(file_path: str) -> pd.DataFrame:
+        """Read a CSV into a DataFrame.
+
+        Args:
+            file_path: Path to the CSV.
+
+        Returns:
+            pandas.DataFrame: Loaded data.
+
+        Raises:
+            BitAdmitAIException: If read fails.
+        """
         try:
             return pd.read_csv(file_path)
         except Exception as exc:
@@ -200,6 +234,21 @@ class DataTransformation:
         return encoded_train, encoded_test, encoders
 
     def initiate_data_transformation(self) -> DataTransformationArtifact:
+        """Run the transformation pipeline and persist artifacts.
+
+        Steps:
+        - validate gate, load train/test,
+        - engineer features, select columns from schema,
+        - fit/transform with ColumnTransformer,
+        - label-encode targets,
+        - save preprocessor bundle and numpy arrays.
+
+        Returns:
+            DataTransformationArtifact: Paths to saved object and arrays.
+
+        Raises:
+            BitAdmitAIException: On validation failure or any processing/IO error.
+        """
         try:
             if not self.data_validation_artifact.validation_status:
                 raise BitAdmitAIException(self.data_validation_artifact.message, sys)
