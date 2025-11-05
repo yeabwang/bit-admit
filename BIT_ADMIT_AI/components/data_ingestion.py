@@ -1,3 +1,17 @@
+"""Data ingestion component.
+
+Pulls admissions data from MongoDB into a feature-store CSV and creates train/test splits.
+
+- export_to_feature_store: read MongoDB and persist raw CSV.
+- dataset_split: split DataFrame and persist train/test CSVs.
+- init_data_ingestion: orchestrate ingestion and return DAArtifacts.
+- Writes CSVs to paths defined in DataIngestionConfig.
+- Logs progress.
+
+Raises:
+- BitAdmitAIException: On any IO/DB/splitting error.
+"""
+
 import os
 import sys
 from pandas import DataFrame
@@ -10,15 +24,43 @@ from BIT_ADMIT_AI.data_access.data_access import DataAccessAndHandling
 
 
 class DataIngestion:
+    """Ingest data from MongoDB and persist local artifacts.
+
+    Args:
+        data_ingestion_config: Paths and parameters for ingestion outputs.
+
+    Attributes:
+        data_ingestion_config: Stored ingestion configuration.
+    """
+
     def __init__(
         self, data_ingestion_config: DataIngestionConfig = DataIngestionConfig()
     ):
+        """Initialize the ingestion component.
+
+        Args:
+            data_ingestion_config: Paths and parameters for ingestion outputs.
+
+        Raises:
+            BitAdmitAIException: If configuration initialization fails.
+        """
         try:
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
             raise BitAdmitAIException(e, sys)
 
     def export_to_feature_store(self):
+        """Export collection data to the feature store CSV.
+
+        Reads from MongoDB via DataAccessAndHandling, writes to
+        data_ingestion_config.feature_store_dir.
+
+        Returns:
+            pandas.DataFrame: Raw admissions data.
+
+        Raises:
+            BitAdmitAIException: On DB access or file IO failure.
+        """
         try:
             logging.info(f"Exporting data from mongodb")
             admission_data = DataAccessAndHandling()
@@ -37,6 +79,17 @@ class DataIngestion:
             raise BitAdmitAIException(e, sys)
 
     def dataset_split(self, dataframe: DataFrame) -> None:
+        """Split the dataset into train and test and persist CSVs.
+
+        Args:
+            dataframe: Input DataFrame to split.
+
+        Side Effects:
+            Writes train/test CSVs to training_file_path and test_file_path.
+
+        Raises:
+            BitAdmitAIException: If split or file write fails.
+        """
         logging.info("Entered dataset_split method")
         try:
             train_set, test_set = train_test_split(
@@ -58,6 +111,14 @@ class DataIngestion:
             raise BitAdmitAIException(e, sys) from e
 
     def init_data_ingestion(self) -> DAArtifacts:
+        """Run the ingestion workflow: export and split.
+
+        Returns:
+            DAArtifacts: Paths to persisted train and test files.
+
+        Raises:
+            BitAdmitAIException: On any step failure.
+        """
         try:
             dataframe = self.export_to_feature_store()
 
