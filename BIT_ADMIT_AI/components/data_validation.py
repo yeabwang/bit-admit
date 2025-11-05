@@ -208,28 +208,28 @@ class DataValidation:
                 f"All required columns present in training dataframe: {status}"
             )
             if not status:
-                validation_error_msg += f"Columns are missing in training dataframe."
+                validation_error_msg += "Columns are missing in training dataframe."
             status = self.validate_num_of_col(dataframe=test_df)
 
             logging.info(f"All required columns present in testing dataframe: {status}")
             if not status:
-                validation_error_msg += f"Columns are missing in test dataframe."
+                validation_error_msg += "Columns are missing in test dataframe."
 
             status = self.is_column_exist(df=train_df)
 
             if not status:
-                validation_error_msg += f"Columns are missing in training dataframe."
+                validation_error_msg += "Columns are missing in training dataframe."
             status = self.is_column_exist(df=test_df)
 
             if not status:
-                validation_error_msg += f"columns are missing in test dataframe."
+                validation_error_msg += "columns are missing in test dataframe."
 
             validation_status = len(validation_error_msg) == 0
 
             if validation_status:
                 drift_status = self.detect_dataset_drift(train_df, test_df)
                 if drift_status:
-                    logging.info(f"Drift detected.")
+                    logging.info("Drift detected.")
                     validation_error_msg = "Drift detected"
                 else:
                     validation_error_msg = "Drift not detected"

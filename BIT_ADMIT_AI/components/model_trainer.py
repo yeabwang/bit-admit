@@ -15,6 +15,7 @@ Outputs:
 Raises:
 - BitAdmitAIException: On data loading, training, or persistence errors.
 """
+
 import importlib
 import sys
 from typing import Dict
@@ -53,6 +54,7 @@ class ModelTrainer:
         model_trainer_config: Stored trainer config.
         model_config: Parsed model.yaml configuration.
     """
+
     def __init__(
         self,
         data_transformation_artifact: DataTransformationArtifact,

@@ -62,7 +62,7 @@ class DataIngestion:
             BitAdmitAIException: On DB access or file IO failure.
         """
         try:
-            logging.info(f"Exporting data from mongodb")
+            logging.info("Exporting data from mongodb")
             admission_data = DataAccessAndHandling()
             dataframe = admission_data.collection_to_dataframe(
                 collection_name=self.data_ingestion_config.collection_name
@@ -106,7 +106,7 @@ class DataIngestion:
                 self.data_ingestion_config.test_file_path, index=False, header=True
             )
 
-            logging.info(f"Exported train and test file path.")
+            logging.info("Exported train and test file path.")
         except Exception as e:
             raise BitAdmitAIException(e, sys) from e
 

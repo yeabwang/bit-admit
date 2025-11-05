@@ -7,7 +7,6 @@ Provides MongoDbClient, a thin wrapper around a shared pymongo.MongoClient.
 """
 
 import sys
-import os
 import pymongo
 import certifi
 from BIT_ADMIT_AI.entity.config import SystemConfig

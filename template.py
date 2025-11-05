@@ -38,7 +38,7 @@ list_of_files = [
     ".gitignore",
     "LICENCE",
     "README.md",
-    "dataset/"
+    "dataset/",
 ]
 
 for pathfile in list_of_files:
