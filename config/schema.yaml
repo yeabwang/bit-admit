@@ -1,3 +1,4 @@
+# model input schema 
 columns:
   - application_id
   - program_category

@@ -1,3 +1,10 @@
+"""BIT Admit AI FastAPI service.
+
+- Renders the admissions form UI and displays predictions.
+- Exposes a JSON API for inference.
+- Uses DataTransformation helpers to compute radar chart metrics.
+"""
+
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -51,6 +58,14 @@ def _calculate_radar_data(features: BitAdmitFeatures) -> list[float]:
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request) -> HTMLResponse:
+    """Render the admissions form UI.
+
+    Args:
+        request: FastAPI Request for template rendering.
+
+    Returns:
+        HTMLResponse: admission.html with empty state.
+    """
     return templates.TemplateResponse(
         "admission.html",
         {
@@ -80,6 +95,27 @@ async def predict(  # pylint: disable=too-many-arguments
     english_score: Optional[str] = Form(None),
     chinese_proficiency: str = Form(""),
 ) -> HTMLResponse:
+    """Predict via HTML form submission and render results.
+
+    Args:
+        request: FastAPI Request for template rendering.
+        program_category: Program category input.
+        country: Applicant country.
+        bit_program_applied: Program name.
+        degree_language: english_taught or chinese_taught.
+        previous_gpa: Prior GPA (0–4).
+        math_physics_background_score: 0–10 scale.
+        research_alignment_score: 0–10 scale.
+        publication_count: Number of publications.
+        recommendation_strength: 0–10 scale.
+        interview_score: 0–100 scale.
+        english_test_type: IELTS/TOEFL/DUOLINGO or empty.
+        english_score: Score string (optional).
+        chinese_proficiency: HSK level string (e.g., HSK4).
+
+    Returns:
+        HTMLResponse: admission.html with predictions and radar chart data.
+    """
     english_score_value = (
         float(english_score.strip()) if english_score and english_score.strip() else 0.0
     )
@@ -123,6 +159,14 @@ async def predict(  # pylint: disable=too-many-arguments
 
 @app.post("/predict-json", response_class=JSONResponse)
 async def predict_json(payload: Dict[str, Any]) -> JSONResponse:
+    """Predict via JSON payload.
+
+    Args:
+        payload: BitAdmitFeatures as a JSON dict.
+
+    Returns:
+        JSONResponse: predictions, radar_data, and ISO timestamp.
+    """
     features = BitAdmitFeatures(**payload)
     predictions = classifier.predict(features)
     radar_data = _calculate_radar_data(features)

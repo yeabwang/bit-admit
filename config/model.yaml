@@ -1,3 +1,4 @@
+# Model config + grid search 
 grid_search:
   class: GridSearchCV
   module: sklearn.model_selection

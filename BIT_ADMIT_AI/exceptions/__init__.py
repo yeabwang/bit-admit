@@ -1,6 +1,8 @@
+"""
+The boss error called everywhere :)
+"""
 import sys
 from BIT_ADMIT_AI.logger import logging
-
 
 # Figure out the error
 def error_message_detail(error):
