@@ -1,3 +1,16 @@
+"""
+Main utilities for BIT_ADMIT_AI.
+
+Provides:
+- dataset generation wrapper,
+- YAML read/write,
+- dill save/load,
+- NumPy array save/load,
+- small DataFrame helpers.
+
+All public helpers raise BitAdmitAIException on failure.
+"""
+
 import os
 import numpy as np
 import dill
@@ -10,7 +23,16 @@ from BIT_ADMIT_AI.utils.data_generator import generate_dataset as _generate_data
 
 
 def generate_dataset() -> DataFrame:
-    "Generates the syntetic dataset"
+    """Generate the synthetic admissions dataset.
+
+    Wraps BIT_ADMIT_AI.utils.data_generator.generate_dataset.
+
+    Returns:
+        pandas.DataFrame: Generated dataset.
+
+    Raises:
+        BitAdmitAIException: If generation fails.
+    """
     try:
         return _generate_dataset()
     except Exception as e:
@@ -19,11 +41,22 @@ def generate_dataset() -> DataFrame:
 
 
 def generate_project_template() -> None:
-    "Generate a project template"
+    "Generate a project template, for future :)"
     pass
 
 
 def read_yaml_file(file_path: str) -> dict:
+    """Read a YAML file.
+
+    Args:
+        file_path: Path to the YAML file.
+
+    Returns:
+        dict: Parsed YAML content.
+
+    Raises:
+        BitAdmitAIException: On IO or YAML parse errors.
+    """
     try:
         with open(file_path, "rb") as yaml_file:
             return yaml.safe_load(yaml_file)
@@ -34,6 +67,18 @@ def read_yaml_file(file_path: str) -> dict:
 
 
 def write_yaml_file(file_path: str, content: object, replace: bool = False) -> None:
+    """Write content to a YAML file.
+
+    Creates parent directories as needed. Optionally replaces an existing file.
+
+    Args:
+        file_path: Output path.
+        content: Serializable content to dump via yaml.dump.
+        replace: If True, remove an existing file before writing.
+
+    Raises:
+        BitAdmitAIException: On IO errors.
+    """
     try:
         if replace:
             if os.path.exists(file_path):
@@ -47,6 +92,17 @@ def write_yaml_file(file_path: str, content: object, replace: bool = False) -> N
 
 
 def load_object(file_path: str) -> object:
+    """Load a Python object serialized with dill.
+
+    Args:
+        file_path: Path to the dill file.
+
+    Returns:
+        object: Deserialized object.
+
+    Raises:
+        BitAdmitAIException: On IO or deserialization errors.
+    """
     logging.info("Entered the load_object method of utils")
 
     try:
@@ -64,10 +120,14 @@ def load_object(file_path: str) -> object:
 
 
 def save_numpy_array_data(file_path: str, array: np.ndarray):
-    """
-    Save numpy array data to file
-    file_path: str location of file to save
-    array: np.array data to save
+    """Persist a NumPy array (.npy).
+
+    Args:
+        file_path: Destination path.
+        array: Array to save.
+
+    Raises:
+        BitAdmitAIException: On IO errors.
     """
     try:
         dir_path = os.path.dirname(os.path.abspath(file_path))
@@ -80,10 +140,16 @@ def save_numpy_array_data(file_path: str, array: np.ndarray):
 
 
 def load_numpy_array_data(file_path: str) -> np.ndarray:
-    """
-    load numpy array data from file
-    file_path: str location of file to load
-    return: np.array data loaded
+    """Load a NumPy array (.npy).
+
+    Args:
+        file_path: Path to the .npy file.
+
+    Returns:
+        np.ndarray: Loaded array.
+
+    Raises:
+        BitAdmitAIException: If the file is missing or load fails.
     """
     try:
         if not os.path.exists(file_path):
@@ -95,6 +161,15 @@ def load_numpy_array_data(file_path: str) -> np.ndarray:
 
 
 def save_object(file_path: str, obj: object) -> None:
+    """Serialize a Python object with dill.
+
+    Args:
+        file_path: Destination path.
+        obj: Python object to serialize.
+
+    Raises:
+        BitAdmitAIException: On IO or serialization errors.
+    """
     logging.info("Entered the save_object method of utils")
 
     try:
@@ -111,10 +186,17 @@ def save_object(file_path: str, obj: object) -> None:
 
 
 def drop_columns(df: DataFrame, cols: list) -> DataFrame:
-    """
-    Drop the columns from a pandas DataFrame
-    df: pandas DataFrame
-    cols: list of columns to be dropped
+    """Drop columns from a DataFrame.
+
+    Args:
+        df: Input DataFrame.
+        cols: Column names to drop.
+
+    Returns:
+        pandas.DataFrame: DataFrame without the requested columns.
+
+    Raises:
+        BitAdmitAIException: If dropping fails.
     """
     logging.info("Entered drop_columns method of utils")
 
