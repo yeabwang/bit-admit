@@ -1,10 +1,10 @@
-# BIT Admit AI  
+# 🎓 BIT Admit AI
 
 **Machine Learning–powered admission and scholarship decision framework for international applicants to Chinese universities.**
 
 ---
 
-## Quick Run
+## ⚡Quick Run
 
 ```bash
 pip install -r requirements.txt
@@ -17,7 +17,7 @@ docker run -p 8000:8000 bit-admit-ai
 
 ---
 
-## Overview  
+## 🧩 Overview
 
 Chinise Universities handle thousands of international applications yearly. Manual evaluation is slow, inconsistent, and contain human bias.  **BIT-ADMIT** propose a machine learning pipeline to automate admission and scholarship decisions for Chinise Universities while keeping fairness and transparency measurable.  
 
@@ -40,7 +40,7 @@ Although trained on synthetic data, distribution alignment tests indicate good g
 
 ---
 
-## Core Features
+## 🧠 Core Features
 
 - Synthetic dataset generator + MongoDB ingestion  
 - Full ML pipeline: ingestion → validation → transformation → training → evaluation → model push  
@@ -58,7 +58,7 @@ Although trained on synthetic data, distribution alignment tests indicate good g
 
 ---
 
-## Setup  
+## 🛠️ Setup  
 
 ```bash
 python3 -m venv .venv
@@ -93,7 +93,7 @@ python scripts/run_ingestion.py
 
 ---
 
-## Train the Model  
+## 🏋️ Train the Model
 
 Full pipeline:
 ```bash
@@ -111,7 +111,7 @@ python demo.py
 
 ---
 
-## Serve via FastAPI  
+## 🌐 Serve via FastAPI
 
 ```bash
 uvicorn app:app --reload --host 0.0.0.0 --port 8000
@@ -143,7 +143,7 @@ curl -s -X POST http://localhost:8000/predict-json   -H "Content-Type: applicati
 
 ---
 
-## Development  
+## 🧑‍💻 Development
 
 ```bash
 black .
