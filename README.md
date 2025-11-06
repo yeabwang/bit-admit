@@ -95,12 +95,7 @@ python scripts/run_ingestion.py
 
 ## 🏋️ Train the Model
 
-Full pipeline:
-```bash
-python scripts/train.py
-```
-
-Quick demo:
+Full training pipeline:
 ```bash
 python demo.py
 ```
