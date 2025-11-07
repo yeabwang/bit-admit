@@ -36,8 +36,7 @@ Deployed as a FastAPI service for real-time inference.
 Although trained on synthetic data, distribution alignment tests indicate good generalization potential.  
 **Future work:** validation on real anonymized admissions data + fairness metrics integration.  
 
-*Read the paper:* [PDF link here]
-
+[Read the paper](https://github.com/yeabwang/bit-admit/blob/main/documents/BIT_ADMIT__A_Machine_Learning_Framework_for_Automating_International_Student_Admission_and_Scholarship_Decisions.pdf)
 ---
 
 ## 🧠 Core Features
