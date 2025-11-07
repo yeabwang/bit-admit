@@ -1,4 +1,4 @@
-# 🎓 BIT Admit AI
+# BIT Admit AI
 
 **Machine Learning–powered admission and scholarship decision framework for international applicants to Chinese universities.**
 
