@@ -17,8 +17,10 @@ import os
 from dotenv import find_dotenv, load_dotenv
 from typing import List
 
-find_dotenv(raise_error_if_not_found=True)
-load_dotenv()
+# Load .env if present; don't fail hard if it's missing so the pipeline can fall back to local CSVs.
+_dotenv_path = find_dotenv(raise_error_if_not_found=False)
+if _dotenv_path:
+	load_dotenv(_dotenv_path)
 
 # Overall system constants
 DATABASE_NAME: str = os.getenv("DATABASE_NAME", "")

@@ -4,19 +4,6 @@
 
 ---
 
-## ⚡Quick Run
-
-```bash
-pip install -r requirements.txt
-pip install -e .
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
-# or with Docker
-docker build -t bit-admit-ai .
-docker run -p 8000:8000 bit-admit-ai
-```
-
----
-
 ## 🧩 Overview
 
 Chinise Universities handle thousands of international applications yearly. Manual evaluation is slow, inconsistent, and contain human bias.  **BIT-ADMIT** propose a machine learning pipeline to automate admission and scholarship decisions for Chinise Universities while keeping fairness and transparency measurable.  
@@ -50,24 +37,17 @@ Although trained on synthetic data, distribution alignment tests indicate good g
 - FastAPI UI + JSON endpoint for real-time predictions  
 
 ---
-
-## Requirements
-- Python ≥ 3.10  
-- (Optional) MongoDB if ingesting external data  
-
----
-
 ## 🛠️ Setup  
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
+conda create -n myenv python=3.12 -y
+conda activate myenv
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .
 ```
 
-### .env configuration (optional)
+### .env configuration
 ```bash
 cat > .env <<'EOF'
 DATABASE_NAME="your_db"
@@ -76,6 +56,13 @@ MONGODB_URL_KEY="your_connection_url"
 EOF
 ```
 
+### Run the ui
+```bash
+uvicorn app:app --reload --host 127.0.0.1 --port 8000
+# or with Docker
+docker build -t bit-admit-ai .
+docker run -p 8000:8000 bit-admit-ai
+```
 ---
 
 ## Data Options  
@@ -90,7 +77,14 @@ python -c 'from BIT_ADMIT_AI.utils.main_utils import generate_dataset; df=genera
 python scripts/run_ingestion.py
 ```
 
----
+**Option 3: Local CSV fallback (default if no .env)**
+
+If `.env` is not provided or MongoDB is unreachable, the pipeline will automatically load the most recent CSV from `original_dataset/` and proceed:
+
+```bash
+python -c "from BIT_ADMIT_AI.components.data_ingestion import DataIngestion; DataIngestion().init_data_ingestion()"
+```
+Ensure at least one CSV exists in `original_dataset/`.
 
 ## 🏋️ Train the Model
 
@@ -108,7 +102,7 @@ python demo.py
 ## 🌐 Serve via FastAPI
 
 ```bash
-uvicorn app:app --reload --host 0.0.0.0 --port 8000
+uvicorn app:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Endpoints:  
