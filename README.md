@@ -42,12 +42,11 @@ Although trained on synthetic data, distribution alignment tests indicate good g
 ```bash
 conda create -n myenv python=3.12 -y
 conda activate myenv
-python -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .
 ```
 
-### .env configuration
+### .env configuration(Optional)
 ```bash
 cat > .env <<'EOF'
 DATABASE_NAME="your_db"

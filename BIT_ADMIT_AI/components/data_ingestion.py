@@ -113,7 +113,7 @@ class DataIngestion:
             BitAdmitAIException: If the folder or a CSV file cannot be found/read.
         """
         try:
-            # Resolve repo root robustly relative to this file: BIT_ADMIT_AI/components/ -> repo root
+            # Resolve repo root relative to this file: BIT_ADMIT_AI/components/ -> repo root
             repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
             dataset_dir = os.path.join(repo_root, "original_dataset")
 
